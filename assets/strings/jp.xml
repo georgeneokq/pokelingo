@@ -1,0 +1,45 @@
+<strings>
+    <string name="play_game">ゲームスタート</string>
+    <string name="settings">せってい</string>
+    <string name="quit_game">とじる</string>
+    <string name="perfect_runs">オールパーフェクト</string>
+    <string name="gym_clear_count">ジム クリア すう</string>
+    <string name="highest_combo">さいこう コンボ</string>
+    <string name="total_correct">せいかい すう</string>
+    <string name="total_wrong">ふせいかい すう</string>
+    <string name="combo">コンボ</string>
+    <string name="battle_statistics">バトル とうけい</string>
+    <string name="perfect">かんぺき！</string>
+    <string name="correct">せいかい！</string>
+    <string name="wrong">はずれ...</string>
+    <string name="resume">さいかい</string>
+    <string name="pause">ていし</string>
+    <string name="paused">ていし ちゅう</string>
+    <string name="save">セーブ</string>
+    <string name="yes">はい</string>
+    <string name="no">いいえ</string>
+    <string name="repeat_voice_tip">[repeat_voice_key]ボタンで こえを さいせい</string>
+
+    <!--  Setting strings  -->
+    <string name="general">いっぱん</string>
+    <string name="save_data">セーブデータ</string>
+    <string name="graphics">グラフィックス</string>
+    <string name="bgm_volume">BGM</string>
+    <string name="sfx_volume">こうかおん</string>
+    <string name="mute_button">ミュート ボタン</string>
+    <string name="pause_key">ていし ボタン</string>
+    <string name="save_key">セーブ ボタン</string>
+    <string name="language">げんご</string>
+    <string name="autosave">オートセーブ</string>
+    <string name="resolution">がしつ</string>
+    <string name="player">プレーヤー</string>
+    <string name="player_name">プレーヤー めい</string>
+    <string name="controls">コントロール</string>
+    <string name="interaction_key">インタラクション ボタン</string>
+    <string name="up_key">うえ</string>
+    <string name="left_key">ひだり</string>
+    <string name="down_key">した</string>
+    <string name="right_key">みぎ</string>
+    <string name="repeat_voice_key">こえを さいせい</string>
+    <string name="apply_changes">かくにん</string>
+</strings>

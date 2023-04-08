@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogs>
+    <dialog name="gym_leader_encounter">
+        <line audio="gym_leader_battle_start_1.wav">
+            <original>Koko made kite omedetou.</original>
+            <subtitle>Congratulations for making it here.</subtitle>
+        </line>
+        <line audio="gym_leader_battle_start_2.wav">
+            <original>Korekara saishuu shiken o okonau.</original>
+            <subtitle>I will now hold the final exam.</subtitle>
+        </line>
+        <line audio="gym_leader_battle_start_3.wav">
+            <original>Kitai shiteru yo!</original>
+            <subtitle>I have high hopes for you!</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="gym_leader_win">
+        <line audio="gym_leader_victory_1.wav">
+            <original>Mada mada da ne...</original>
+            <subtitle>It seems you still have a long way to go.</subtitle>
+        </line>
+        <line audio="gym_leader_victory_2.wav">
+            <original>Tsuyoku nattara mata chousen shite koi!</original>
+            <subtitle>Challenge me again when you've become stronger!</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_ashhomeboard">
+        <line audio="test.wav">
+            <original>Satoshi no ie</original>
+            <subtitle>Satoshi's house</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_mayhomeboard">
+        <line audio="test.wav">
+            <original>Haruka no ie</original>
+            <subtitle>Haruka's house</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_littleroottownboard">
+        <line audio="test.wav">
+            <original>Mishiro taun e youkoso!</original>
+            <subtitle>Welcome to Mishiro town!</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_grannyhouseboard">
+        <line audio="grannyhouse.wav">
+            <original>Obaachan chi</original>
+            <subtitle>Granny's house</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_petalburggymboard">
+        <line audio="toukacitygym.wav">
+            <original>Touka shiti jimu</original>
+            <subtitle>Touka city gym</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_pokemoncenterboard">
+        <line audio="pokemoncenter.wav">
+            <original>Pokemon sentaa</original>
+            <subtitle>Pokemon center</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_birchlabboard">
+        <line audio="test.wav">
+            <original>Odamaki hakase kenkyuujo</original>
+            <subtitle>Professor Odamaki's laboratory</subtitle>
+        </line>
+    </dialog>
+
+    <!--  Petalburg gym doors  -->
+    <dialog name="petalburg_gym_hiragana_room">
+        <line audio="hiragana.wav">
+            <original>"HIRAGANA"</original>
+            <subtitle>「ひらがな」</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>Hairimasu ka?</original>
+            <subtitle>Enter this room?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_katakana_room">
+        <line audio="katakana.wav">
+            <original>「KATAKANA」</original>
+            <subtitle>(かたかな)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>Hairimasu ka?</original>
+            <subtitle>Enter this room?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_weather_room">
+        <line audio="tango_tenki.wav">
+            <original>「tango: tenki」</original>
+            <subtitle>(Phrases: Weather)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>Hairimasu ka?</original>
+            <subtitle>Enter this room?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_greetings_room">
+        <line audio="tango_aisatsu.wav">
+            <original>「tango: aisatsu」</original>
+            <subtitle>(Phrases: Greetings)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>Hairimasu ka?</original>
+            <subtitle>Enter this room?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_verbs_room">
+        <line audio="tango_doushi.wav">
+            <original>「tango: doushi」</original>
+            <subtitle>(Phrases: Verbs)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>Hairimasu ka?</original>
+            <subtitle>Enter this room?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_sentence_forming_room">
+        <line audio="bunshousakusei.wav">
+            <original>「bunshou sakusei」</original>
+            <subtitle>(Sentence forming)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>Hairimasu ka?</original>
+            <subtitle>Enter this room?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_particles_room">
+        <line audio="tenioha.wav">
+            <original>「tenioha」</original>
+            <subtitle>(Particles)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>Hairimasu ka?</original>
+            <subtitle>Enter this room?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_leader_room">
+        <line audio="gymleader.wav">
+            <original>「jimu riidaa」</original>
+            <subtitle>(Gym leader)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>Hairimasu ka?</original>
+            <subtitle>Enter this room?</subtitle>
+        </line>
+    </dialog>
+</dialogs>

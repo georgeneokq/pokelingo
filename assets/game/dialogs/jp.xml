@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogs>
+    <dialog name="gym_leader_encounter">
+        <line audio="gym_leader_battle_start_1.wav">
+            <original> ここ まで きて おめでとう。</original>
+            <subtitle>Koko made kite omedetou.</subtitle>
+        </line>
+        <line audio="gym_leader_battle_start_2.wav">
+            <original>これから さいしゅう しけん を おこなう。</original>
+            <subtitle>Kore kara saishuu shiken o okonau.</subtitle>
+        </line>
+        <line audio="gym_leader_battle_start_3.wav">
+            <original>きたい してる よ！</original>
+            <subtitle>Kitai shiteru yo!</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="gym_leader_win">
+        <line audio="gym_leader_victory_1.wav">
+            <original>まだまだだね...</original>
+            <subtitle>Mada mada da ne...</subtitle>
+        </line>
+        <line audio="gym_leader_victory_2.wav">
+            <original>つよく なったら また ちょうせん して こい！</original>
+            <subtitle>Tsuyoku nattara mata chousen shite koi!</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_ashhomeboard">
+        <line audio="enter_room.wav">
+            <original>サトシ の いえ</original>
+            <subtitle>Satoshi no ie</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_mayhomeboard">
+        <line audio="enter_room.wav">
+            <original>ハルカ の いえ</original>
+            <subtitle>Haruka no ie</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_littleroottownboard">
+        <line audio="enter_room.wav">
+            <original>ミシロタ ウン へ ようこそ！</original>
+            <subtitle>Mishiro taun e youkoso!</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_grannyhouseboard">
+        <line audio="grannyhouse.wav">
+            <original>おばあちゃん ち</original>
+            <subtitle>Obaachan chi</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_petalburggymboard">
+        <line audio="toukacitygym.wav">
+            <original>とうか シティ ジム</original>
+            <subtitle>Touka shiti jimu</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_pokemoncenterboard">
+        <line audio="pokemoncenter.wav">
+            <original>ポケモン センター</original>
+            <subtitle>Pokemon sentaa</subtitle>
+        </line>
+    </dialog>
+
+    <dialog name="interactable_birchlabboard">
+        <line audio="enter_room.wav">
+            <original>オダマキ はかせ けんきゅうじょ</original>
+            <subtitle>Odamaki hakase kenkyuujo</subtitle>
+        </line>
+    </dialog>
+
+    <!--  Petalburg gym doors  -->
+    <dialog name="petalburg_gym_hiragana_room">
+        <line audio="hiragana.wav">
+            <original>「ひらがな」</original>
+            <subtitle>(Hiragana)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>この へや に はいります か？</original>
+            <subtitle>kono heya ni hairimasu ka?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_katakana_room">
+        <line audio="katakana.wav">
+            <original>「かたかな」</original>
+            <subtitle>(Katakana)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>この へや に はいります か？</original>
+            <subtitle>kono heya ni hairimasu ka?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_weather_room">
+        <line audio="tango_tenki.wav">
+            <original>「たんご：てんき」</original>
+            <subtitle>(tango: tenki)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>この へや に はいります か？</original>
+            <subtitle>kono heya ni hairimasu ka?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_greetings_room">
+        <line audio="tango_aisatsu.wav">
+            <original>「たんご：あいさつ」</original>
+            <subtitle>(tango: aisatsu)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>この へや に はいります か？</original>
+            <subtitle>kono heya ni hairimasu ka?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_verbs_room">
+        <line audio="tango_doushi.wav">
+            <original>「たんご：どうし」</original>
+            <subtitle>(tango: doushi)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>この へや に はいります か？</original>
+            <subtitle>kono heya ni hairimasu ka?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_sentence_forming_room">
+        <line audio="bunshousakusei.wav">
+            <original>「ぶんしょうさくせい」</original>
+            <subtitle>(bunshou sakusei)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>この へや に はいります か？</original>
+            <subtitle>kono heya ni hairimasu ka?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_particles_room">
+        <line audio="tenioha.wav">
+            <original>「てにをは」</original>
+            <subtitle>(tenioha)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>この へや に はいります か？</original>
+            <subtitle>kono heya ni hairimasu ka?</subtitle>
+        </line>
+    </dialog>
+    <dialog name="petalburg_gym_leader_room">
+        <line audio="gymleader.wav">
+            <original>「ジムリーダー」</original>
+            <subtitle>(jimu riidaa)</subtitle>
+        </line>
+        <line audio="enter_room.wav">
+            <original>この へや に はいります か？</original>
+            <subtitle>kono heya ni hairimasu ka?</subtitle>
+        </line>
+    </dialog>
+</dialogs>

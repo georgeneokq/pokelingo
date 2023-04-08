@@ -1,0 +1,89 @@
+# View the settings documentation at /docs/settings.md
+# Label will be treated as a string name defined in a strings file.
+- group: general
+  settings:
+    - setting_name: bgm_volume
+      label: bgm_volume
+      type: number
+      value: 100
+    - setting_name: sfx_volume
+      label: sfx_volume
+      type: number
+      value: 100
+    - setting_name: mute_button
+      label: mute_button
+      type: boolean
+      value: false
+    - setting_name: pause_key
+      label: pause_key
+      type: hotkey
+      value: Escape
+    - setting_name: save_key
+      label: save_key
+      type: hotkey
+      value: F12
+    - setting_name: language
+      label: language
+      type: select
+      extras:
+        choices: |
+          EN
+          JP
+      value: en
+
+- group: save_data
+  settings:
+    - setting_name: autosave
+      label: autosave
+      type: boolean
+      value: true
+
+- group: graphics
+  settings:
+    - setting_name: resolution
+      label: resolution
+      type: select
+      extras:
+        choices: |
+          1920 x 1080
+          1280 x 720
+          1024 x 768
+      value: 1920 x 1080
+
+- group: player
+  settings:
+    - setting_name: player_name
+      label: player_name
+      type: text
+      extras:
+        min_length: 4
+        max_length: 10
+        disallowed_characters: "~!@#$%^&*()+`=[]\\{}|;':\",./<>?"
+      value: Player
+  subgroups:
+    - group: controls
+      settings:
+        - setting_name: interaction_key
+          label: interaction_key
+          type: hotkey
+          value: Enter
+        - setting_name: up_key
+          label: up_key
+          type: hotkey
+          value: W
+        - setting_name: left_key
+          label: left_key
+          type: hotkey
+          value: A
+        - setting_name: down_key
+          label: down_key
+          type: hotkey
+          value: S
+        - setting_name: right_key
+          label: right_key
+          type: hotkey
+          value: D
+        - setting_name: repeat_voice_key
+          label: repeat_voice_key
+          type: hotkey
+          value: V

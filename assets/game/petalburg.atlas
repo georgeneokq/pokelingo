@@ -1,0 +1,69 @@
+
+petalburg.png
+size: 512, 512
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+1
+  rotate: false
+  xy: 2, 126
+  size: 142, 126
+  orig: 142, 126
+  offset: 0, 0
+  index: -1
+2L
+  rotate: false
+  xy: 292, 384
+  size: 142, 126
+  orig: 142, 126
+  offset: 0, 0
+  index: -1
+2R
+  rotate: false
+  xy: 147, 256
+  size: 142, 126
+  orig: 142, 126
+  offset: 0, 0
+  index: -1
+3L
+  rotate: false
+  xy: 147, 131
+  size: 140, 123
+  orig: 140, 123
+  offset: 0, 0
+  index: -1
+3M
+  rotate: false
+  xy: 291, 256
+  size: 140, 126
+  orig: 140, 126
+  offset: 0, 0
+  index: -1
+3R
+  rotate: false
+  xy: 146, 2
+  size: 140, 127
+  orig: 140, 127
+  offset: 0, 0
+  index: -1
+4L
+  rotate: false
+  xy: 147, 384
+  size: 143, 126
+  orig: 143, 126
+  offset: 0, 0
+  index: -1
+4R
+  rotate: false
+  xy: 2, 254
+  size: 143, 127
+  orig: 143, 127
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 2, 383
+  size: 143, 127
+  orig: 143, 127
+  offset: 0, 0
+  index: -1

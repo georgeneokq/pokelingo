@@ -1,0 +1,118 @@
+
+gym_leader.png
+size: 512, 64
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+idle_east
+  rotate: false
+  xy: 370, 6
+  size: 30, 48
+  orig: 30, 48
+  offset: 0, 0
+  index: -1
+move_east
+  rotate: false
+  xy: 370, 6
+  size: 30, 48
+  orig: 30, 48
+  offset: 0, 0
+  index: 1
+idle_south
+  rotate: false
+  xy: 138, 6
+  size: 34, 48
+  orig: 34, 48
+  offset: 0, 0
+  index: -1
+move_south
+  rotate: false
+  xy: 138, 6
+  size: 34, 48
+  orig: 34, 48
+  offset: 0, 0
+  index: 1
+move_east
+  rotate: false
+  xy: 210, 4
+  size: 30, 50
+  orig: 30, 50
+  offset: 0, 0
+  index: 0
+move_east
+  rotate: false
+  xy: 242, 4
+  size: 30, 50
+  orig: 30, 50
+  offset: 0, 0
+  index: 2
+move_north
+  rotate: false
+  xy: 2, 2
+  size: 32, 52
+  orig: 32, 52
+  offset: 0, 0
+  index: 2
+move_north
+  rotate: false
+  xy: 104, 2
+  size: 32, 52
+  orig: 32, 52
+  offset: 0, 0
+  index: 0
+move_north
+  rotate: false
+  xy: 174, 6
+  size: 34, 48
+  orig: 34, 48
+  offset: 0, 0
+  index: 1
+idle_north
+  rotate: false
+  xy: 174, 6
+  size: 34, 48
+  orig: 34, 48
+  offset: 0, 0
+  index: -1
+move_south
+  rotate: false
+  xy: 36, 2
+  size: 32, 52
+  orig: 32, 52
+  offset: 0, 0
+  index: 0
+move_south
+  rotate: false
+  xy: 70, 2
+  size: 32, 52
+  orig: 32, 52
+  offset: 0, 0
+  index: 2
+move_west
+  rotate: false
+  xy: 274, 4
+  size: 30, 50
+  orig: 30, 50
+  offset: 0, 0
+  index: 0
+move_west
+  rotate: false
+  xy: 306, 4
+  size: 30, 50
+  orig: 30, 50
+  offset: 0, 0
+  index: 2
+move_west
+  rotate: false
+  xy: 338, 6
+  size: 30, 48
+  orig: 30, 48
+  offset: 0, 0
+  index: 1
+idle_west
+  rotate: false
+  xy: 338, 6
+  size: 30, 48
+  orig: 30, 48
+  offset: 0, 0
+  index: -1

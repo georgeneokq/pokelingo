@@ -1,0 +1,50 @@
+- group: General
+  settings:
+    - setting_name: master_volume
+      label: Master volume
+      type: number
+      value: 100
+    - setting_name: bgm_volume
+      label: BGM
+      type: number
+      value: 100
+    - setting_name: sfx_volume
+      label: SE volume
+      type: number
+      value: 100
+    
+- group: Hotkeys
+  settings:
+    - setting_name: pause
+      label: Pause
+      type: hotkey
+      value: p
+    - setting_name: scoreboard
+      label: Toggle scoreboard
+      type: hotkey
+      value: "`"
+  subgroups:
+    - group: Players
+      subgroups:
+        - group: Player 1
+          settings:
+            - setting_name: player_name
+              label: Name
+              type: text
+              value: Player 1
+            - setting_name: player_1_up
+              label: Up
+              type: hotkey
+              value: up
+            - setting_name: player_1_right
+              label: Right
+              type: hotkey
+              value: right
+            - setting_name: player_1_down
+              label: Down
+              type: hotkey
+              value: down
+            - setting_name: player_1_left
+              label: Left
+              type: hotkey
+              value: left

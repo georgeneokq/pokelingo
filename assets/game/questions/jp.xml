@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<questions>
+    <question name="hiragana_1" voice="moji_yomikata.wav">
+        <question>よみかた: あ</question>
+        <choice>ma</choice>
+        <choice>
+            <answer />a
+        </choice>
+        <choice>ga</choice>
+        <choice>ka</choice>
+    </question>
+    <question name="hiragana_2" voice="moji_yomikata.wav">
+        <question>よみかた: い</question>
+        <choice>shi</choice>
+        <choice><answer />i
+        </choice>
+        <choice>gi</choice>
+        <choice>ki</choice>
+    </question>
+    <question name="hiragana_3" voice="moji_yomikata.wav">
+        <question>よみかた: え</question>
+        <choice>se</choice>
+        <choice>ne</choice>
+        <choice>te</choice>
+        <choice><answer />e
+        </choice>
+    </question>
+    <question name="hiragana_4" voice="moji_yomikata.wav">
+        <question>よみかた: う</question>
+        <choice>su</choice>
+        <choice>tsu</choice>
+        <choice>nu</choice>
+        <choice><answer />u
+        </choice>
+    </question>
+    <question name="hiragana_5" voice="moji_yomikata.wav">
+        <question>よみかた: お</question>
+        <choice>ho</choice>
+        <choice><answer />o
+        </choice>
+        <choice>go</choice>
+        <choice>zo</choice>
+    </question>
+    <question name="hiragana_6" voice="moji_yomikata.wav">
+        <question>よみかた: か</question>
+        <choice>ga</choice>
+        <choice>na</choice>
+        <choice><answer />ka
+        </choice>
+        <choice>pa</choice>
+    </question>
+    <question name="hiragana_7" voice="moji_yomikata.wav">
+        <question>よみかた: き</question>
+        <choice>gi</choice>
+        <choice>shi</choice>
+        <choice><answer />ki
+        </choice>
+        <choice>i</choice>
+    </question>
+    <question name="hiragana_8" voice="moji_yomikata.wav">
+        <question>よみかた: く</question>
+        <choice>su</choice>
+        <choice><answer />ku
+        </choice>
+        <choice>i</choice>
+        <choice>ha</choice>
+    </question>
+    <question name="hiragana_9" voice="moji_yomikata.wav">
+        <question>よみかた: け</question>
+        <choice>ha</choice>
+        <choice>ze</choice>
+        <choice><answer />ke
+        </choice>
+        <choice>o</choice>
+    </question>
+    <question name="hiragana_10" voice="moji_yomikata.wav">
+        <question>よみかた: こ</question>
+        <choice><answer />wo
+        </choice>
+        <choice>no</choice>
+        <choice>go</choice>
+        <choice>ko</choice>
+    </question>
+    <question name="hiragana_11" voice="moji_yomikata.wav">
+        <question>よみかた: さ</question>
+        <choice>dji</choice>
+        <choice>za</choice>
+        <choice>chi</choice>
+        <choice>
+            <answer />sa
+        </choice>
+    </question>
+    <question name="hiragana_12" voice="moji_yomikata.wav">
+        <question>よみかた: し</question>
+        <choice>hi</choice>
+        <choice><answer />shi
+        </choice>
+        <choice>su</choice>
+        <choice>ni</choice>
+    </question>
+    <question name="hiragana_13" voice="moji_yomikata.wav">
+        <question>よみかた: す</question>
+        <choice><answer />su
+        </choice>
+        <choice>tsu</choice>
+        <choice>go</choice>
+        <choice>so</choice>
+    </question>
+    <question name="hiragana_14" voice="moji_yomikata.wav">
+        <question>よみかた: せ</question>
+        <choice>ze</choice>
+        <choice><answer />se
+        </choice>
+        <choice>he</choice>
+        <choice>be</choice>
+    </question>
+    <question name="hiragana_15" voice="moji_yomikata.wav">
+        <question>よみかた: そ</question>
+        <choice><answer />so
+        </choice>
+        <choice>ho</choice>
+        <choice>mo</choice>
+        <choice>yo</choice>
+    </question>
+    <question name="hiragana_16" voice="moji_yomikata.wav">
+        <question>よみかた: た</question>
+        <choice><answer />ta
+        </choice>
+        <choice>da</choice>
+        <choice>sa</choice>
+        <choice>ha</choice>
+    </question>
+    <question name="hiragana_17" voice="moji_yomikata.wav">
+        <question>よみかた: ち</question>
+        <choice>sa</choice>
+        <choice><answer />chi
+        </choice>
+        <choice>ru</choice>
+        <choice>wo</choice>
+    </question>
+    <question name="hiragana_18" voice="moji_yomikata.wav">
+        <question>よみかた: つ</question>
+        <choice>te</choice>
+        <choice>ko</choice>
+        <choice>chi</choice>
+        <choice><answer />tsu
+        </choice>
+    </question>
+    <question name="hiragana_19" voice="moji_yomikata.wav">
+        <question>よみかた: て</question>
+        <choice>ge</choice>
+        <choice>se</choice>
+        <choice><answer />te
+        </choice>
+        <choice>ro</choice>
+    </question>
+    <question name="hiragana_20" voice="moji_yomikata.wav">
+        <question>よみかた: と</question>
+        <choice>zo</choice>
+        <choice><answer />to
+        </choice>
+        <choice>no</choice>
+        <choice>so</choice>
+    </question>
+    <question name="hiragana_21" voice="moji_yomikata.wav">
+        <question>よみかた: な</question>
+        <choice>za</choice>
+        <choice>ra</choice>
+        <choice>ta</choice>
+        <choice>
+            <answer />na
+        </choice>
+    </question>
+    <question name="hiragana_22" voice="moji_yomikata.wav">
+        <question>よみかた: に</question>
+        <choice><answer />ni
+        </choice>
+        <choice>sa</choice>
+        <choice>hi</choice>
+        <choice>i</choice>
+    </question>
+    <question name="hiragana_23" voice="moji_yomikata.wav">
+        <question>よみかた: ぬ</question>
+        <choice>su</choice>
+        <choice>fu</choice>
+        <choice><answer />nu
+        </choice>
+        <choice>mu</choice>
+    </question>
+    <question name="hiragana_24" voice="moji_yomikata.wav">
+        <question>よみかた: ね</question>
+        <choice><answer />ne
+        </choice>
+        <choice>re</choice>
+        <choice>me</choice>
+        <choice>to</choice>
+    </question>
+    <question name="hiragana_25" voice="moji_yomikata.wav">
+        <question>よみかた: の</question>
+        <choice>re</choice>
+        <choice>mu</choice>
+        <choice>so</choice>
+        <choice><answer />no
+        </choice>
+    </question>
+    <question name="hiragana_26" voice="moji_yomikata.wav">
+        <question>よみかた: は</question>
+        <choice><answer />ha
+        </choice>
+        <choice>sa</choice>
+        <choice>ga</choice>
+        <choice>ma</choice>
+    </question>
+    <question name="hiragana_27" voice="moji_yomikata.wav">
+        <question>よみかた: ひ</question>
+        <choice>ji</choice>
+        <choice><answer />hi
+        </choice>
+        <choice>ri</choice>
+        <choice>chi</choice>
+    </question>
+    <question name="hiragana_28" voice="moji_yomikata.wav">
+        <question>よみかた: ふ</question>
+        <choice>bo</choice>
+        <choice>na</choice>
+        <choice>ku</choice>
+        <choice><answer />fu
+        </choice>
+    </question>
+    <question name="hiragana_29" voice="moji_yomikata.wav">
+        <question>よみかた: へ</question>
+        <choice>e</choice>
+        <choice><answer />he
+        </choice>
+        <choice>no</choice>
+        <choice>te</choice>
+    </question>
+    <question name="hiragana_30" voice="moji_yomikata.wav">
+        <question>よみかた: ほ</question>
+        <choice><answer />ho
+        </choice>
+        <choice>ko</choice>
+        <choice>o</choice>
+        <choice>so</choice>
+    </question>
+    <question name="hiragana_31" voice="moji_yomikata.wav">
+        <question>よみかた: ま</question>
+        <choice><answer />ma
+        </choice>
+        <choice>ha</choice>
+        <choice>da</choice>
+        <choice>sa</choice>
+    </question>
+    <question name="hiragana_32" voice="moji_yomikata.wav">
+        <question>よみかた: み</question>
+        <choice><answer />mi
+        </choice>
+        <choice>ka</choice>
+        <choice>ha</choice>
+        <choice>a</choice>
+    </question>
+    <question name="hiragana_33" voice="moji_yomikata.wav">
+        <question>よみかた: む</question>
+        <choice>bu</choice>
+        <choice><answer />mu
+        </choice>
+        <choice>gu</choice>
+        <choice>zu</choice>
+    </question>
+    <question name="hiragana_34" voice="moji_yomikata.wav">
+        <question>よみかた: め</question>
+        <choice><answer />me
+        </choice>
+        <choice>ke</choice>
+        <choice>pe</choice>
+        <choice>de</choice>
+    </question>
+    <question name="hiragana_35" voice="moji_yomikata.wav">
+        <question>よみかた: も</question>
+        <choice><answer />mo
+        </choice>
+        <choice>zo</choice>
+        <choice>po</choice>
+        <choice>to</choice>
+    </question>
+    <question name="hiragana_36" voice="moji_yomikata.wav">
+        <question>よみかた: や</question>
+        <choice>pa</choice>
+        <choice>a</choice>
+        <choice>sa</choice>
+        <choice><answer />ya
+        </choice>
+    </question>
+    <question name="hiragana_37" voice="moji_yomikata.wav">
+        <question>よみかた: ゆ</question>
+        <choice>fu</choice>
+        <choice>tsu</choice>
+        <choice>ru</choice>
+        <choice><answer />yu
+        </choice>
+    </question>
+    <question name="hiragana_38" voice="moji_yomikata.wav">
+        <question>よみかた: よ</question>
+        <choice>go</choice>
+        <choice>ho</choice>
+        <choice>me</choice>
+        <choice><answer />yo
+        </choice>
+    </question>
+    <question name="hiragana_39" voice="moji_yomikata.wav">
+        <question>よみかた: ら</question>
+        <choice><answer />ra
+        </choice>
+        <choice>me</choice>
+        <choice>mu</choice>
+        <choice>ri</choice>
+    </question>
+    <question name="hiragana_40" voice="moji_yomikata.wav">
+        <question>よみかた: り</question>
+        <choice>pa</choice>
+        <choice><answer />ri
+        </choice>
+        <choice>na</choice>
+        <choice>ka</choice>
+    </question>
+    <question name="hiragana_41" voice="moji_yomikata.wav">
+        <question>よみかた: る</question>
+        <choice>ko</choice>
+        <choice><answer />ru
+        </choice>
+        <choice>ga</choice>
+        <choice>re</choice>
+    </question>
+    <question name="hiragana_42" voice="moji_yomikata.wav">
+        <question>よみかた: れ</question>
+        <choice>ge</choice>
+        <choice>ke</choice>
+        <choice><answer />re
+        </choice>
+        <choice>pe</choice>
+    </question>
+    <question name="hiragana_43" voice="moji_yomikata.wav">
+        <question>よみかた: ろ</question>
+        <choice><answer />ro
+        </choice>
+        <choice>po</choice>
+        <choice>go</choice>
+        <choice>mo</choice>
+    </question>
+    <question name="hiragana_44" voice="moji_yomikata.wav">
+        <question>よみかた: わ</question>
+        <choice>pa</choice>
+        <choice>to</choice>
+        <choice>a</choice>
+        <choice><answer />wa
+        </choice>
+    </question>
+    <question name="hiragana_45" voice="moji_yomikata.wav">
+        <question>よみかた: を</question>
+        <choice><answer />wo
+        </choice>
+        <choice>so</choice>
+        <choice>ko</choice>
+        <choice>po</choice>
+    </question>
+    <question name="katakana_1" voice="moji_yomikata.wav">
+        <question>カ</question>
+        <choice>da</choice>
+        <choice>ko</choice>
+        <choice>ka<answer/></choice>
+        <choice>te</choice>
+    </question>
+    <question name="katakana_2" voice="moji_yomikata.wav">
+        <question>ラ</question>
+        <choice>sa</choice>
+        <choice>mo</choice>
+        <choice>ba</choice>
+        <choice>ra<answer/></choice>
+    </question>
+    <question name="katakana_3" voice="moji_yomikata.wav">
+        <question>タ</question>
+        <choice>no</choice>
+        <choice>ko</choice>
+        <choice>ta<answer/></choice>
+        <choice>pa</choice>
+    </question>
+    <question name="katakana_4" voice="moji_yomikata.wav">
+        <question>マ</question>
+        <choice>za</choice>
+        <choice>shi</choice>
+        <choice>ma<answer/></choice>
+        <choice>mo</choice>
+    </question>
+    <question name="vocabulary_weather_1" voice="kotoba_imi.wav" >
+        <question>あめ</question>
+        <choice>Window</choice>
+        <choice>
+            <answer />
+            Rain
+        </choice>
+        <choice>White</choice>
+        <choice>Wall</choice>
+    </question>
+    <question name="vocabulary_weather_2" voice="kotoba_imi.wav" >
+        <question>Meaning: tenki</question>
+        <choice>Heavy rain</choice>
+        <choice>
+            <answer />
+            Weather
+        </choice>
+        <choice>Wind</choice>
+        <choice>Cool weather</choice>
+    </question>
+    <question name="vocabulary_greetings_1" voice="kotoba_imi.wav" >
+        <question>こんにちは</question>
+        <choice>Thank you</choice>
+        <choice>Welcome</choice>
+        <choice>
+            <answer />
+            Hello
+        </choice>
+        <choice>No problem</choice>
+    </question>
+    <question name="vocabulary_greetings_2" voice="kotoba_imi.wav" >
+        <question>こんばんは</question>
+        <choice>Good night</choice>
+        <choice>Good afternoon</choice>
+        <choice>
+            <answer />
+            Good evening
+        </choice>
+        <choice>Goodbye</choice>
+    </question>
+    <question name="vocabulary_greetings_3" voice="listening_1.wav" >
+        <type>listening</type>
+        <question>かのじょ は なんて いいましたか？</question>
+        <choice>Amazing!<answer/></choice>
+        <choice>Thank you!</choice>
+        <choice>You're good!</choice>
+        <choice>It's delicious!</choice>
+    </question>
+    <question name="vocabulary_greetings_4" voice="test.wav" >
+        <type>listening</type>
+        <question>かのじょ は なんて いいましたか？</question>
+        <choice>Um, big brother...<answer/></choice>
+        <choice>Um, little brother...</choice>
+        <choice>Um, little sister...</choice>
+        <choice>Um, big sister...</choice>
+    </question>
+    <question name="vocabulary_actions_1" voice="kotoba_imi.wav" >
+        <question>はしる</question>
+        <choice>Walk</choice>
+        <choice>Swim</choice>
+        <choice>
+            <answer />
+            Run
+        </choice>
+        <choice>Sleep</choice>
+    </question>
+    <question name="vocabulary_actions_2" voice="kotoba_imi.wav" >
+        <question>わたる</question>
+        <choice>Swim</choice>
+        <choice>Run</choice>
+        <choice>
+            <answer />
+            Cross
+        </choice>
+        <choice>Toss</choice>
+    </question>
+    <question name="sentence_forming_1" voice="test.wav" >
+        <question>___ は ★ ___ ___ 。</question>
+        <choice>かれ</choice>
+        <choice>食べました</choice>
+        <choice>
+            <answer />
+            カレー
+        </choice>
+        <choice>を</choice>
+    </question>
+    <question name="sentence_forming_2" voice="test.wav" >
+        <question>___ ___ ご飯 ★ ___ 。</question>
+        <choice>かれ</choice>
+        <choice>
+            食べました
+        </choice>
+        <choice>
+            <answer/>
+            を
+        </choice>
+        <choice>は</choice>
+    </question>
+    <question name="particles_1" voice="test.wav" >
+        <question>かれ _　せめないで ください 。</question>
+        <choice>で</choice>
+        <choice>
+            <answer/>
+            を
+        </choice>
+        <choice>
+            が
+        </choice>
+        <choice>は</choice>
+    </question>
+    <question name="particles_2" voice="test.wav" >
+        <question>あ、それは ぼく _ おにぎりだ。</question>
+        <choice>で</choice>
+        <choice>
+            <answer/>
+            の
+        </choice>
+        <choice>
+            から
+        </choice>
+        <choice>も</choice>
+    </question>
+</questions>

@@ -1,0 +1,15 @@
+
+dialoguebox.png
+size: 1024, 512
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+dialoguebox
+  rotate: false
+  xy: 2, 2
+  size: 837, 258
+  split: 0, 0, 0, 0
+  pad: 0, 0, 0, 0
+  orig: 837, 258
+  offset: 0, 0
+  index: -1

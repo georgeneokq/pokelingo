@@ -1,0 +1,1670 @@
+@startuml
+class com.georgeneokq.game.screen.BattleScreen {
+- Question currentQuestion
+- boolean awaitingNextQuestion
+- int playerMultiplier
+- int opponentMultiplier
+- Container topLeftContainer
+- Container topRightContainer
+- Table optionBoxTable
+- Table dialogBoxTable
+- MoveSelectBox moveSelectBox
+- Table dialogTable
+- DialogBox dialogBox
+- HPBar opponentHPBar
+- HPBar playerHPBar
+- Label repeatVoiceTipLabel
+- ComboDisplayWidget playerComboWidget
+- ComboDisplayWidget opponentComboWidget
+- Animations animations
+- ShakeAnimation playerShakeAnimation
+- ShakeAnimation opponentShakeAnimation
+- MoveAnimation playerMoveAnimation
+- MoveAnimation opponentMoveAnimation
+- Transitions transitions
+- Viewport viewport
+- Stage stage
+- Batch batch
+- Skin skin
+- BitmapFont comboFont
+- int comboFontSize
+- Controls controls
+- int interactionKey
+- int repeatVoiceHotkey
+- Sound selectSound
+- Sound defeatedSound
+- Sound attackSound
+- Player player
+- Opponent opponent
+- boolean initialAnimationEnded
+- float initialAnimationTimeElapsed
+- float initialAnimationTotalTime
+- float initialPlayerX
+- float initialOpponentX
+- boolean battleFinished
+- boolean playerWon
+- boolean perfectRun
+- int totalCorrect
+- int totalWrong
+- int highestCombo
+- Dialog dialog
+- int dialogLineIndex
+- String dialogText
+- AbstractScreen redirectScreen
+- EventManager eventManager
+- MusicManager musicManager
+- AssetManager assetManager
+- SettingsManager settingsManager
+- ScreensManager screensManager
+- DialogAudioManager dialogAudioManager
+- Table table
+- Drawable whiteBackgroundDrawable
++ void initialize()
+- void playVoice(Music,float)
+- void handleKeyPress()
+- void playerCorrect()
+- void playerWrong()
+- void updateMultiplierLabels()
+- void handleOptionSelected()
+- float getBGMVolumeLimit(Question)
++ void show()
++ void render(float)
++ AbstractScreen clone()
+}
+class com.georgeneokq.engine.settings.exceptions.InvalidSubclassException {
+}
+enum com.georgeneokq.game.question.QuestionType {
++  TEXT
++  LISTENING
+}
+interface com.georgeneokq.engine.animation.TransitionRenderer {
+~ void render(float)
+~ void start()
+~ void stop()
+~ boolean isRunning()
+~ float getTimeElapsed()
+}
+class com.georgeneokq.engine.settings.SettingsParser {
++ {static} List<SettingsGroup> deserializeSettings(String)
++ {static} String serializeSettings(List<SettingsGroup>)
+- {static} void recursiveInitializeHashmaps(HashMap<String,Object>,SettingsGroup)
+- {static} void recursiveInitializeSettingGroups(SettingsGroup,HashMap)
+}
+class com.georgeneokq.engine.leaderboard.LeaderboardItem {
+- String name
+- int score
+- String timestamp
++ String getName()
++ void setName(String)
++ int getScore()
++ void setScore(int)
++ String getTimestamp()
++ void setTimestamp(String)
+}
+abstract class com.georgeneokq.engine.actor.Actor {
+# float width
+# float height
+# float x
+# float y
+# float dx
+# float dy
+# float speedX
+# float speedY
+# boolean allowDiagonalMovement
+- Controls controls
+- float originalDx
+- float originalDy
+- Sprite sprite
+- boolean animationEnabled
+- TextureAtlas animationTextureAtlas
+- AnimationSet animations
+- boolean isWalking
+- float walkTimer
+# Direction direction
+- List<Integer> pressedDirectionKeys
+- Map<Integer,Runnable> movementRunnables
++ void onPause()
++ void onResume()
++ TextureRegion getAnimationSprite()
++ AnimationSet getAnimations()
++ void setAnimations(AnimationSet)
++ float getWalkTimer()
++ void setWalkTimer(float)
++ void draw(Batch,float)
++ void animatedMoveUp()
++ void animatedMoveDown()
++ void animatedMoveLeft()
++ void animatedMoveRight()
++ void idle()
++ void moveUp()
++ void moveDown()
++ void moveLeft()
++ void moveRight()
++ void handleKeyPress()
++ boolean isIdle()
++ Rectangle getBounds()
++ boolean goingOutOfBounds(float,float,float,float)
++ void outOfWorldBounds()
++ void act(float)
++ Actor clone()
++ void changeDxTowardsZero(float)
++ void changeDyTowardsZero(float)
++ Direction getDirection()
++ Direction getOppositeDirection()
++ void setDirection(Direction)
++ float getWidth()
++ void setWidth(float)
++ float getHeight()
++ void setHeight(float)
++ float getX()
++ void setX(float)
++ float getY()
++ void setY(float)
++ float getDx()
++ void setDx(float)
++ float getDy()
++ void setDy(float)
++ float getSpeedX()
++ void setSpeedX(float)
++ float getSpeedY()
++ void setSpeedY(float)
++ Controls getControls()
++ void setControls(Controls)
++ boolean isAllowDiagonalMovement()
++ void setAllowDiagonalMovement(boolean)
++ boolean isAnimationEnabled()
+}
+class com.georgeneokq.engine.image.ImageUtil {
++ {static} float SCALE
++ {static} float getScaledDimension(Texture,float,float)
++ {static} float getScaledDimension(Sprite,float,float)
+}
+interface com.georgeneokq.engine.screen.ResizableScreen {
+~ void onResolutionChanged(int,int)
+}
+class com.georgeneokq.game.Main {
+- Array<MenuItem> menuItems
+- Globals globals
+- ScreensManager screensManager
+- SettingsManager settingsManager
+- AssetManager assetManager
++ void create()
++ void onLoad()
+- void queueAssetsFromDir(String,Class)
+- void queueAssetsFromDir(String,Class,FileFilter)
+- void queueAssetsFromDir(String,Class,FileFilter,boolean)
+- void queueAssets()
+- void initializeGlobals()
++ void render()
++ void dispose()
+}
+class com.georgeneokq.game.event.DialogEventData {
+- Dialog dialog
+- Actor actor
+- boolean startBattle
++ Dialog getDialog()
++ Actor getActor()
++ boolean willStartBattle()
+}
+class com.georgeneokq.game.tests.SettingsTest {
+- List<SettingsGroup> settings
++ void testCorrectConfig()
++ void testStatefulTraverse()
+}
+class com.georgeneokq.game.screen.GameScreen {
+- ExtendedStage stage
+- Skin skin
+- MenuWindow pauseWindow
+- ScreensManager screensManager
+- SettingsManager settingsManager
+- AssetManager assetManager
+- EventManager eventManager
+- MusicManager musicManager
+- Globals globals
+- Player player
+- SelectionBox selectionBox
+- Table selectionBoxRoot
+- Table dialogRoot
+- DialogBox dialogBox
+- int dialogLineIndex
+- Dialog dialog
+- boolean dialogShown
+- Actor dialogActor
+- float characterWidth
+- float characterHeight
+- float characterSpeed
+- GameStateManager gameStateManager
+- DialogAudioManager dialogAudioManager
+- {static} int DEFAULT_SAVE_IDENTIFIER
+- int saveGameHotkey
+- int interactionKey
+- int repeatVoiceHotkey
+- Sound selectSound
+- MapController mapController
+- FadeOutTransition fadeOutTransitionRenderer
+- Transitions transitions
+- Viewport viewport
+- OrthographicCamera camera
+~ int cameraViewportWidth
+~ int cameraViewportHeight
+- boolean isPaused
+- float fontScale
+- int baseFontSize
+- int worldWidth
+- int worldHeight
+- int tileWidth
+- int tileHeight
+- String mapName
+- SpawnPoint spawnPoint
+- PlayerControls playerControls
+- boolean willStartBattle
+- BattleEndedEventData battleEndedEventData
+- PlayerStats playerStats
+- Object selectionRequestor
++ void initialize()
+- void createPauseMenu()
+- void buildExtendedStage()
+- void buildDialogRoot()
+- void buildSelectionBox()
+- void loadNPCs()
+- void addMapStateControllers()
+- void handleKeyPressed()
++ String[] getSubscribedEvents()
++ void eventReceived(String,Object)
+- void updateMapState()
+- void saveGame()
+- void quitGame()
++ void show()
++ void render(float)
++ void onLoadRequestReceived(int)
++ void resize(int,int)
++ void onResolutionChanged(int,int)
++ AbstractScreen clone()
+}
+class com.georgeneokq.game.manager.MusicManager {
+- {static} MusicManager instance
+- Music music
+- String musicName
+- AssetManager assetManager
+- float volume
+- float previousVolume
+- {static} Map<String,Float> loopPoints
++ {static} MusicManager getInstance()
++ void initialize(AssetManager)
++ Music playMusic(String)
++ Music playMusic(String,boolean)
++ void setMusicVolume(float)
++ void limitVolume(float)
++ void restorePreviousVolume()
++ void setLoopStartPosition(float)
++ void setLooping(boolean)
++ void resetLoopStartPosition()
++ void stopMusic()
++ Music getMusic()
+}
+class com.georgeneokq.game.actor.npc.PetalburgGymVocabGreetingsTrainer {
+- Globals globals
+- EventManager eventManager
+- ScreensManager screensManager
+- Texture battleSprite
+- Question[] questions
+- int currentQuestionIndex
+- String[] subscribedEvents
+- void loadAndShuffleQuestions()
++ void actorEnterView(Actor)
++ void actorInView(Actor)
++ void actorLeaveView(Actor)
++ void interact(Actor)
++ void eventReceived(String,Object)
++ Texture getBattleSprite()
++ String getBattleMusicName()
++ int getMaxHP()
++ Question[] getQuestions()
++ Question getNextQuestion()
++ Dialog getWinDialog()
+}
+class com.georgeneokq.engine.screen.LoadingScreen {
+- AssetManager assetManager
+- OnLoadListener onLoadListener
+- FontGenerator fontGenerator
+- Skin engineDefaultSkin
+- Stage stage
+- ProgressBar progressBar
+- Label percentageLabel
+- Label statusLabel
++ void initialize()
++ void render(float)
++ AbstractScreen clone()
++ void dispose()
+}
+interface com.georgeneokq.engine.screen.LoadingScreen.OnLoadListener {
+~ void onLoad()
+}
+class com.georgeneokq.game.actor.PlayerControls {
+- int interactionKey
++ int getInteractionKey()
++ void setInteractionKey(int)
+}
+class com.georgeneokq.game.actor.InteractiveEntry {
+- String mapName
+- String spawnPointName
+- boolean enabled
+- String dialogName
+- MapController mapController
+- Globals globals
+- EventManager eventManager
+- AssetManager assetManager
+- String[] events
+- boolean changeMap
++ boolean isEnabled()
++ void setEnabled(boolean)
++ void interact(Actor)
++ void eventReceived(String,Object)
++ void act(float)
+- void loadMap()
+- TiledMap loadMap(String)
+}
+class com.georgeneokq.engine.manager.EventManager {
++ Map<String,List<Subscriber>> eventsMap
+- {static} EventManager eventManager
++ {static} EventManager getInstance()
++ void subscribe(Subscriber,String[])
++ void subscribe(Subscriber,List<String>)
++ void unsubscribe(Subscriber)
++ void emit(String)
++ void emit(String,Object)
+}
+interface com.georgeneokq.engine.manager.EventManager.Subscriber {
+~ void eventReceived(String,Object)
+}
+abstract class com.georgeneokq.engine.settings.Setting {
+# String name
+# String label
+# Map<String,Object> extras
+# T value
++ Setting<T> clone()
++ String getName()
++ void setName(String)
++ String getLabel()
++ void setLabel(String)
++ Map<String,Object> getExtras()
++ Object getExtra(String)
++ void handleExtra(String,Object)
++ T getValue()
++ {abstract}Serializable getSerializableValue()
++ {abstract}void setValue(Object)
+}
+class com.georgeneokq.game.actor.npc.PetalburgGymHiraganaTrainer {
+- Globals globals
+- EventManager eventManager
+- ScreensManager screensManager
+- Texture battleSprite
+- Question[] questions
+- int currentQuestionIndex
+- String[] subscribedEvents
+- void loadAndShuffleQuestions()
++ void actorEnterView(Actor)
++ void actorInView(Actor)
++ void actorLeaveView(Actor)
++ void interact(Actor)
++ void eventReceived(String,Object)
++ Texture getBattleSprite()
++ String getBattleMusicName()
++ int getMaxHP()
++ Question[] getQuestions()
++ Question getNextQuestion()
++ Dialog getWinDialog()
+}
+class com.georgeneokq.engine.manager.ScreensManager {
+- {static} ScreensManager screensManager
+- HashMap<Class,AbstractScreen> classScreenMap
+- AbstractScreen currentScreen
+- Game game
+- Globals globals
++ {static} ScreensManager getInstance()
++ void initialize(Game)
++ void notifyResolutionChanged()
++ void cacheScreens(AbstractScreen)
++ AbstractScreen getScreen(Class)
++ void changeScreen(Class)
++ AbstractScreen getCurrentScreen()
++ void setCurrentScreen(AbstractScreen)
++ Game getGame()
+}
+class com.georgeneokq.engine.manager.ScreensManager.ScreenNotCachedException {
+}
+class com.georgeneokq.engine.settings.HotkeySetting {
++ String getValueString()
++ void setValue(Object)
++ String getSerializableValue()
+}
+class com.georgeneokq.game.actor.Player {
+- Texture battleSprite
+- Sound entrySound
+- AssetManager assetManager
+- EventManager eventManager
+- String[] subscribedEvents
++ void onCollision(Collidable)
++ void interact(Actor)
++ void eventReceived(String,Object)
++ int getMaxHP()
++ Texture getBattleSprite()
++ void setBattleSprite(Texture)
+}
+class com.georgeneokq.engine.manager.SettingsManager {
+- {static} String MODIFIABLE_SETTINGS_FILE_PATH
+- {static} String SETTINGS_FILE_HASH_PATH
+- {static} String DEFAULT_ORIGINAL_SETTINGS_PATH
+- {static} SettingsManager settingsManager
+- List<SettingsGroup> settings
+- HashMap<String,Setting> queryMapping
+- Globals globals
+- AssetManager assetManager
+- EventManager eventManager
+- ScreensManager screensManager
++ {static} SettingsManager getInstance()
++ {static} SettingsManager getInstance(String)
++ List<SettingsGroup> getSettings()
++ List<SettingsGroup> getSettingsCopy()
+- List<SettingsGroup> loadSettings(String)
++ void saveSettings(List<SettingsGroup>)
+- HashMap<String,Setting> createQueryMapping(List<SettingsGroup>)
++ Setting getSetting(String)
++ T getSetting(String,Class<T>)
++ Setting getSetting(HashMap<String,Setting>,String)
++ T getSetting(HashMap<String,Setting>,String,Class<T>)
++ void applySettings()
+}
+interface com.georgeneokq.engine.actor.Interactable {
+~ Rectangle getFieldOfView()
+~ Rectangle getFieldOfInteraction()
+~ void actorEnterView(Actor)
+~ void actorLeaveView(Actor)
+~ void actorInView(Actor)
+~ void interact(Actor)
+}
+class com.georgeneokq.engine.save.GameSaver {
++ {static} int NEW_SAVE
++ {static} String DEFAULT_SAVES_PATH
+- Kryo kryo
+- String savesPath
+- Map<String,Class> nameClassMapping
++ Kryo getKryo()
+- void ensureFolderCreated(String)
++ int save(int,Map<String,Object>)
++ Map<String,Object> load(int)
++ Map<String,Object>[] loadAll()
++ String getFileNameByIdentifier(int)
++ int getIdentifierByFileName(String)
+- void registerClasses()
+- Map<String,Object> getMetadataFields(int)
+- Map<String,Class> getMetadataClassMapping()
+- void kryoSetup()
+- void registerLibgdxClasses()
+}
+class com.georgeneokq.game.Globals {
+- {static} Globals globals
+- AssetManager assetManager
+- GameSaver gameSaver
+- Language language
+- Map<String,String> strings
+- Map<String,Dialog> dialogs
+- Map<String,Question> questions
+- Map<String,NPC> npcMap
+- Map<String,Integer> mapStates
+- String battleMusicPath
++ int resolutionWidth
++ int resolutionHeight
++ {static} Globals getInstance()
++ AssetManager getAssetManager()
++ void setAssetManager(AssetManager)
++ GameSaver getGameSaver()
++ void setGameSaver(GameSaver)
++ int getMapState(String)
++ void updateMapState(String,int)
++ void setMapStates(Map<String,Integer>)
++ Language getLanguage()
++ void setLanguage(Language)
+- Map<String,String> loadStrings(String)
++ String getString(String)
+- Map<String,Dialog> loadDialogs(String)
++ Dialog getDialog(String)
+- boolean isCorrectAnswer(Element)
+- Map<String,Question> loadQuestions(String)
++ Question getQuestion(String)
++ Question[] getQuestions(QuestionFilter)
++ Question[] getQuestions(QuestionFilter[])
++ Question[] getQuestions(QuestionFilter[],boolean)
++ NPC getNPC(String)
++ void addNPC(String,NPC)
++ void setNPCs(Map<String,NPC>)
++ String getBattleMusicPath()
++ void playSoundEffect(String)
+}
+class com.georgeneokq.game.screen.MainMenuScreen {
+- Stage stage
+- Sound sound
+- Array<MenuItem> menuItems
+- ScreensManager screensManager
+- SettingsManager settingsManager
+- AssetManager assetManager
+- MusicManager musicManager
+- Globals globals
++ void initialize()
+- void setMenuItems()
+- void buildStage()
++ void show()
++ void render(float)
++ void resize(int,int)
++ AbstractScreen clone()
+}
+enum com.georgeneokq.engine.font.FontEnum {
++  DEFAULT
++  MGENPLUS
++  NOTOSANS
+}
+class com.georgeneokq.game.actor.npc.PetalburgGymVocabActionsTrainer {
+- Globals globals
+- EventManager eventManager
+- ScreensManager screensManager
+- Texture battleSprite
+- Question[] questions
+- int currentQuestionIndex
+- String[] subscribedEvents
+- void loadAndShuffleQuestions()
++ void actorEnterView(Actor)
++ void actorInView(Actor)
++ void actorLeaveView(Actor)
++ void interact(Actor)
++ void eventReceived(String,Object)
++ Texture getBattleSprite()
++ String getBattleMusicName()
++ int getMaxHP()
++ Question[] getQuestions()
++ Question getNextQuestion()
++ Dialog getWinDialog()
+}
+interface com.georgeneokq.engine.font.IFontGenerator {
+~ BitmapFont generate(int,String)
+}
+abstract class com.georgeneokq.game.map.MapStateController {
++ {abstract}void updateByState(int,Array<Actor>)
+}
+class com.georgeneokq.game.actor.npc.PetalburgGymSentenceFormingTrainer {
+- Globals globals
+- EventManager eventManager
+- ScreensManager screensManager
+- Texture battleSprite
+- Question[] questions
+- int currentQuestionIndex
+- String[] subscribedEvents
+- void loadAndShuffleQuestions()
++ void actorEnterView(Actor)
++ void actorInView(Actor)
++ void actorLeaveView(Actor)
++ void interact(Actor)
++ void eventReceived(String,Object)
++ Texture getBattleSprite()
++ String getBattleMusicName()
++ int getMaxHP()
++ Question[] getQuestions()
++ Question getNextQuestion()
++ Dialog getWinDialog()
+}
+class com.georgeneokq.game.widget.HPBar {
+- Skin skin
+- Label hpLabel
+- boolean animating
+- int hpBeforeAnimation
+- int displayedHP
+- float timeElapsed
+- float totalAnimationTime
+- float timeBeforeAnimation
+- int maxHP
+- int hp
+- Sound hpDecreaseSound
+- boolean animationScheduled
+- int newHP
++ void updateHP(int)
++ void updateHPAnimated(int,float)
++ void updateHPAnimated(int,float,float)
+- void startAnimation(int,float)
++ void act(float)
++ int getHP()
++ boolean isAnimating()
+}
+interface com.georgeneokq.game.question.QuestionFilterPredicate {
+~ boolean filter(Question)
+}
+interface com.georgeneokq.game.actor.npc.Opponent {
+~ Texture getBattleSprite()
+~ int getMaxHP()
+~ Question[] getQuestions()
+~ Question getNextQuestion()
+~ String getBattleMusicName()
+~ Dialog getWinDialog()
+}
+class com.georgeneokq.engine.actor.Controls {
+- int upKey
+- int downKey
+- int leftKey
+- int rightKey
++ int getUpKey()
++ void setUpKey(int)
++ int getDownKey()
++ void setDownKey(int)
++ int getLeftKey()
++ void setLeftKey(int)
++ int getRightKey()
++ void setRightKey(int)
+}
+enum com.georgeneokq.game.Language {
++  EN
++  JP
++  JP_KANA
++ {static} Language fromString(String)
+}
+class com.georgeneokq.engine.settings.NumberSetting {
+- float min
+- float max
+- float stepSize
++ float getMin()
++ float getMax()
++ float getStepSize()
++ void setValue(Object)
++ String getSerializableValue()
++ void handleExtra(String,Object)
+}
+interface com.georgeneokq.engine.animation.AnimationRenderer {
+~ void render(float)
+~ void start()
+~ void stop()
+~ boolean isRunning()
+~ float getTimeElapsed()
+}
+class com.georgeneokq.game.actor.npc.PetalburgGymKatakanaTrainer {
+- Globals globals
+- EventManager eventManager
+- ScreensManager screensManager
+- Texture battleSprite
+- Question[] questions
+- int currentQuestionIndex
+- String[] subscribedEvents
+- void loadAndShuffleQuestions()
++ void actorEnterView(Actor)
++ void actorInView(Actor)
++ void actorLeaveView(Actor)
++ void interact(Actor)
++ void eventReceived(String,Object)
++ Texture getBattleSprite()
++ String getBattleMusicName()
++ int getMaxHP()
++ Question[] getQuestions()
++ Question getNextQuestion()
++ Dialog getWinDialog()
+}
+class com.georgeneokq.game.PlayerStats {
+- int perfectRuns
+- int highestCombo
+- int gymClearCount
++ int getPerfectRuns()
++ void setPerfectRuns(int)
++ int getHighestCombo()
++ void setHighestCombo(int)
++ int getGymClearCount()
++ void setGymClearCount(int)
+}
+class com.georgeneokq.engine.settings.SettingsGroup {
+- String name
+- List<Setting> settings
+- List<SettingsGroup> subgroups
++ SettingsGroup clone()
++ void statefulTraverse(StatefulTraverseCallback,boolean)
+- void statefulTraverse(SettingsGroup,ArrayList<String>,StatefulTraverseCallback,boolean)
++ String getName()
++ void setName(String)
++ void addSetting(Setting)
++ List<Setting> getSettings()
++ List<SettingsGroup> getSubgroups()
++ void addSubgroup(SettingsGroup)
+- void setSettings(List<Setting>)
+- void setSubgroups(List<SettingsGroup>)
+}
+interface com.georgeneokq.engine.settings.SettingsGroup.StatefulTraverseCallback {
+~ void execute(SettingsGroup,List<String>,int)
+}
+class com.georgeneokq.game.tests.leaderboard.LeaderboardItemsGenerator {
++ void generate()
+- String getCurrentTimestamp()
+}
+class com.georgeneokq.engine.screen.InstructionScreen {
+- Stage stage
+- Skin skin
+- String instructions
+- Label instructionLabel
+- ScrollPane scrollPane
+- AssetManager assetManager
+- ScreensManager screensManager
+- Globals globals
++ void initialize()
+- void buildStage()
+- void handleKeyPressed()
++ void show()
++ void render(float)
++ void resize(int,int)
++ void dispose()
++ AbstractScreen clone()
+}
+class com.georgeneokq.game.actor.InteractableObject {
+- EventManager eventManager
+- Globals globals
+- String name
++ void interact(Actor)
++ void eventReceived(String,Object)
+}
+enum com.georgeneokq.game.event.Events {
++  MAP_CHANGED
++  LANGUAGE_CHANGED
++  PAUSED
++  RESUMED
++  DIALOG_STARTED
++  DIALOG_ENDED
++  BATTLE_STARTED
++  BATTLE_ENDED
++  SELECTION_REQUEST
++  SELECTION_RESPONSE
+}
+class com.georgeneokq.engine.animation.MoveAnimation {
+- Actor actor
+- float originalX
+- float originalY
+- float currentX
+- float currentY
+- float targetX
+- float targetY
+- float elapsedTime
+- float totalAnimationTime
+- float timeBeforeAnimation
+- OnAnimationFinishListener animationFinishListener
+- boolean animating
+- boolean move
++ void render(float)
++ float getCurrentX()
++ float getCurrentY()
++ void start()
++ void stop()
++ boolean isRunning()
++ float getTimeElapsed()
+}
+class com.georgeneokq.game.widget.MoveSelectOptions {
+- String[] options
++ String getOption(int)
++ void setOption(int,String)
+}
+class com.georgeneokq.game.mapstate.PetalburgRoomController {
++ void updateByState(int,Array<Actor>)
+- void enableEntries(Array<Actor>)
+}
+class com.georgeneokq.game.actor.npc.NPC {
+- EventManager eventManager
+- Globals globals
+- String name
++ void interact(Actor)
++ void eventReceived(String,Object)
+}
+interface com.georgeneokq.engine.actor.Collidable {
+~ boolean collidesWith(Collidable)
+~ void onCollision(Collidable)
+~ Rectangle getBounds()
+~ Rectangle getForecastedBounds()
+}
+class com.georgeneokq.engine.menu.MenuItem {
+- String title
+- OnSelectListener selectListener
+- Sound sound
++ String getTitle()
++ void setTitle(String)
++ OnSelectListener getSelectListener()
++ void setSelectListener(OnSelectListener)
++ Sound getSound()
++ void setSound(Sound)
++ void playSound()
+}
+interface com.georgeneokq.engine.menu.MenuItem.OnSelectListener {
+~ void onSelect()
+}
+class com.georgeneokq.game.manager.DialogAudioManager {
+- {static} DialogAudioManager dialogAudioManager
+- Music audio
++ {static} DialogAudioManager getInstance()
++ void playAudio(Music)
++ void resumeAudio()
++ void pauseAudio()
++ void stopAudio()
+}
+class com.georgeneokq.engine.save.LoadingNotSupportedException {
+}
+enum com.georgeneokq.game.skin.MyFontEnum {
++  NOTOSANS_COMBO
+}
+interface com.georgeneokq.engine.animation.OnTransitionFinishListener {
+~ void onFinish(TransitionRenderer)
+}
+enum com.georgeneokq.engine.actor.Direction {
++  UP
++  LEFT
++  DOWN
++  RIGHT
+}
+class com.georgeneokq.engine.screen.SelectSaveScreen {
+- ScreensManager screensManager
+- SettingsManager settingsManager
+- AssetManager assetManager
+- Globals globals
+- GameSaver gameSaver
+- Class<? extends AbstractScreen> handleSaveDataScreenClass
+- Stage stage
+~ Skin skin
+~ Drawable itemBackground
++ void initialize()
+- void buildStage()
+- void handleInputs()
++ void show()
++ void render(float)
++ void resize(int,int)
++ AbstractScreen clone()
+}
+class com.georgeneokq.engine.hashing.HashUtil {
++ {static} String crc32(byte[])
++ {static} String md5(byte[])
++ {static} String bytesToHex(byte[])
+}
+class com.georgeneokq.engine.manager.GameStateManager {
+- GameState state
+- {static} GameStateManager gameStateManager
++ {static} GameStateManager getInstance()
++ void togglePlayPauseState()
++ GameState getState()
++ void setState(GameState)
++ void eventReceived(String,Object)
+}
+class com.georgeneokq.engine.animation.FadeOutTransition {
+- boolean running
+- float timeElapsed
+- float totalTransitionTime
+- float timeBeforeTransition
+- Stage stage
+- Table overlay
+- Drawable background
+- OnTransitionFinishListener onFinishListener
+- boolean removeOverlayAfterFinish
+- float getAlpha()
++ void render(float)
++ void start()
++ void stop()
++ void removeOverlay()
++ boolean isRunning()
++ float getTimeElapsed()
+}
+class com.georgeneokq.game.widget.SelectionBox {
+- List<Label> labels
+- List<Image> arrows
+- Controls controls
+- String[] choices
+- Table table
+- String selection
+- int selectionIndex
+- Sound selectSound
+- AssetManager assetManager
+- float fontScale
++ void renderSelectionBox()
++ void act(float)
++ String getSelection()
++ void clearSelection()
+- void handleKeyPress()
+- void moveUp()
+- void moveDown()
+- void setSelection(int)
++ void setVisible(boolean)
++ boolean isShown()
+}
+abstract class com.georgeneokq.engine.actor.InteractableActor {
+# boolean interacting
+# boolean interactionKeyPressed
++ List<Actor> actorsInView
++ Rectangle getFieldOfView()
++ Rectangle getFieldOfInteraction()
++ void handleKeyPress()
++ void actorEnterView(Actor)
++ void actorInView(Actor)
++ void actorLeaveView(Actor)
++ void interact(Actor)
++ boolean isActorInView(Actor)
++ boolean isInteracting()
++ void setInteracting()
++ boolean isInteractionKeyPressed()
++ void setInteractionKeyPressed(boolean)
+}
+class com.georgeneokq.game.actor.Entry {
+- MapController mapController
+- AssetManager assetManager
+- EventManager eventManager
+- String mapName
+- String spawnPointName
++ void loadMap()
+- TiledMap loadMap(String)
+}
+class com.georgeneokq.game.event.SelectionRequestEventData {
+- Dialog dialog
+- Object requestor
++ Dialog getDialog()
++ Object getRequestor()
+}
+enum com.georgeneokq.engine.settings.SettingType {
++  HOTKEY
++  NUMBER
++  TEXT
++  BOOLEAN
++  SELECT
+- String value
++ String toString()
+}
+class com.georgeneokq.engine.screen.CreditsScreen {
+- Stage stage
+- Skin skin
+- Texture background
+- Texture background2
+- SpriteBatch batch
+- float backgroundVelocity
+- float backgroundX
+~ float worldWidth
+~ float screenWidth
+~ float screenHeight
+~ float worldHeight
+- String[] creditsArray
+- Label creditsText
+- int actionDuration
+- AssetManager assetManager
+- ScreensManager screensManager
+- Globals globals
++ void initialize()
+- void moveScreen()
+- void buildStage()
++ void show()
++ void render(float)
++ void resize(int,int)
++ void dispose()
++ AbstractScreen clone()
+}
+class com.georgeneokq.game.actor.npc.PetalburgGymVocabWeatherTrainer {
+- Globals globals
+- EventManager eventManager
+- ScreensManager screensManager
+- Texture battleSprite
+- Question[] questions
+- int currentQuestionIndex
+- String[] subscribedEvents
+- void loadAndShuffleQuestions()
++ void actorEnterView(Actor)
++ void actorInView(Actor)
++ void actorLeaveView(Actor)
++ void interact(Actor)
++ void eventReceived(String,Object)
++ Texture getBattleSprite()
++ String getBattleMusicName()
++ int getMaxHP()
++ Question[] getQuestions()
++ Question getNextQuestion()
++ Dialog getWinDialog()
+}
+class com.georgeneokq.engine.factory.DrawableFactory {
++ {static} Drawable fromTextureAtlas(TextureAtlas,String)
++ {static} Drawable fromTexture(Texture)
++ {static} Drawable fromPixmap(Pixmap)
++ {static} Drawable fromColor(Color)
+}
+class com.georgeneokq.game.tests.save.SampleDataGenerator {
++ void generate()
+}
+class com.georgeneokq.game.event.BattleEndedEventData {
+- boolean perfectRun
+- int totalCorrect
+- int totalWrong
+- int highestCombo
+- boolean playerWon
++ boolean playerWon()
++ void setPlayerWon(boolean)
++ boolean isPerfectRun()
++ void setPerfectRun(boolean)
++ int getTotalCorrect()
++ void setTotalCorrect(int)
++ int getTotalWrong()
++ void setTotalWrong(int)
++ int getHighestCombo()
++ void setHighestCombo(int)
+}
+class com.georgeneokq.game.widget.DialogBox {
+- float fontScale
+- String targetOriginalText
+- String targetSubtitleText
+- float originalTextAnimTimer
+- float subtitleTextAnimTimer
+- float originalTextAnimationTotalTime
+- float subtitleTextAnimationTotalTime
+- STATE state
+- Runnable onFinish
+- Label originalTextLabel
+- Label subtitleTextLabel
++ void animateText(String,float,Runnable)
++ void animateTextWithSubtitle(String,String,float,Runnable)
++ boolean isFinished()
+- void setOriginalText(String)
+- void setSubtitleText(String)
++ void act(float)
+}
+enum com.georgeneokq.game.widget.STATE {
++  ANIMATING
++  IDLE
+}
+class com.georgeneokq.engine.actor.NonCollidableActor {
+}
+class com.georgeneokq.game.actor.npc.PetalburgGymLeader {
+- Globals globals
+- EventManager eventManager
+- ScreensManager screensManager
+- Texture battleSprite
+- Question[] questions
+- int currentQuestionIndex
+- String[] subscribedEvents
+- void loadAndShuffleQuestions()
++ void actorEnterView(Actor)
++ void actorInView(Actor)
++ void actorLeaveView(Actor)
++ void interact(Actor)
++ void eventReceived(String,Object)
++ Texture getBattleSprite()
++ String getBattleMusicName()
++ int getMaxHP()
++ Question[] getQuestions()
++ Question getNextQuestion()
++ Dialog getWinDialog()
+}
+class com.georgeneokq.engine.settings.SettingFactory {
++ {static} EnumMap<SettingType,Class> typeClassMapping
++ {static} HashMap<Class,SettingType> classTypeMapping
++ {static} Setting fromMap(HashMap)
+}
+class com.georgeneokq.game.skin.PokemonSkinGenerator {
+- {static} PokemonSkinGenerator skinGenerator
++ {static} PokemonSkinGenerator getInstance()
++ Skin generateSkin(AssetManager)
++ Skin generateSkin(AssetManager,int)
+}
+class com.georgeneokq.game.dialog.Dialog {
+- Line[] lines
++ Line[] getLines()
++ void setLine(Line[])
+}
+class com.georgeneokq.game.dialog.Dialog.Line {
+- String originalText
+- String subtitle
+- Music audio
++ String getOriginalText()
++ void setOriginalText(String)
++ String getSubtitle()
++ void setSubtitle(String)
++ Music getAudio()
++ void setAudio(Music)
+}
+class com.georgeneokq.game.map.MapController {
+- Map<String,MapStateController> mapStateControllerMap
+- String mapName
+- TiledMap map
+- MapProperties props
+- OrthogonalTiledMapRenderer renderer
+- OrthographicCamera camera
+- SpriteBatch batch
+- ExtendedStage stage
+- Globals globals
+- MusicManager musicManager
+- AssetManager assetManager
+- int tileWidth
+- int tileHeight
++ void renderInteractables()
++ void renderCollidables()
++ void renderEntryPoints()
++ SpawnPoint getSpawnPoint(String)
++ void renderVisibleLayers()
++ void setMapStateControllers(Map<String,MapStateController>)
++ void updateMapState(int)
++ void render()
++ void dispose()
++ void setOrthoCameraViewport(int,int)
++ void setCameraPosition(float,float)
++ String getWhiteoutMap()
++ SpawnPoint getWhiteoutSpawnPoint()
++ void setView(OrthographicCamera)
++ int getMapWidth()
++ int getMapHeight()
++ TiledMap getMap()
++ void setBGM()
++ String getBGMName()
++ void setMap(TiledMap)
+}
+class com.georgeneokq.game.question.Question {
+- String name
+- QuestionType type
+- String question
+- Choice[] choices
+- int correctChoiceIndex
+- int weightage
+- Music voice
++ {static} QuestionType getTypeByString(String)
++ String getName()
++ QuestionType getType()
++ String getQuestion()
+- Choice getCorrectChoice()
++ int getCorrectChoiceIndex()
++ int getWeightage()
++ void setWeightage(int)
++ Choice[] getChoices()
++ void setChoices(Choice[])
++ Music getVoice()
++ void setVoice(Music)
+}
+class com.georgeneokq.engine.settings.DropdownSelectSetting {
+- String[] choices
++ String[] getChoices()
++ void setValue(Object)
++ void handleExtra(String,Object)
++ String getSerializableValue()
+}
+class com.georgeneokq.game.widget.MenuWindow {
+- List<MenuItem> menuItems
+- String title
+- Window window
+- Label perfectRunsLabel
+- Label highestComboLabel
+- Label gymClearCountLabel
+- PlayerStats playerStats
+- Skin skin
+- float width
+- float height
+- float fontScale
+- boolean attached
++ void updatePlayerStats(PlayerStats)
+- void buildWindow()
++ void show(Stage)
++ void hide()
+}
+class com.georgeneokq.engine.animation.FlashTransition {
+- int numFlashes
+- float flashInterval
+- boolean running
+- float timeBeforeTransition
+- float timeElapsed
+- float totalTransitionTime
+- boolean peaked
+- Stage stage
+- Table overlay
+- Drawable background
+- OnTransitionFinishListener onFinishListener
+- float getAlpha()
++ void render(float)
++ void start()
++ void stop()
++ boolean isRunning()
++ float getTimeElapsed()
+}
+class com.georgeneokq.engine.map.MapUtil {
++ {static} int getMapWidth(Map)
++ {static} int getMapHeight(Map)
++ {static} int getTileWidth(Map)
++ {static} int getTileHeight(Map)
+}
+class com.georgeneokq.game.actor.SpawnPoint {
+- Rectangle bounds
+- Direction direction
++ Rectangle getBounds()
++ void setBounds(Rectangle)
++ Direction getDirection()
++ void setDirection(Direction)
+}
+class com.georgeneokq.engine.screen.SettingsScreen {
+- ScreensManager screensManager
+- SettingsManager settingsManager
+- AssetManager assetManager
+- Globals globals
+- Stage stage
+- Skin pokemonSkin
+- Skin engineDefaultSkin
+- HotkeySetting hotkeySetting
+- boolean settingHotkeyMode
+- TextButton hotkeyTextButton
+- List<SettingsGroup> settings
++ void initialize()
+- void handleInputs()
+- void buildStage()
++ void show()
++ void render(float)
++ void resize(int,int)
++ AbstractScreen clone()
+}
+class com.georgeneokq.engine.settings.BooleanSetting {
++ void setValue(Object)
++ String getSerializableValue()
+}
+class com.georgeneokq.engine.settings.exceptions.InvalidFormatException {
+}
+class com.georgeneokq.game.event.EntryEventData {
+- String mapName
+- SpawnPoint spawnPoint
++ String getMapName()
++ SpawnPoint getSpawnPoint()
+}
+class com.georgeneokq.engine.stage.ExtendedStage {
+- Array<CollidableActor> collidableActors
+- Array<NonCollidableActor> nonCollidableActors
+- Array<InteractableActor> interactableActors
+- SettingsManager settingsManager
+- GameStateManager gameStateManager
+- EventManager eventManager
+- int pauseGameHotkey
+- boolean inputsEnabled
++ void addActors(Actor)
++ Array<Actor> getAllActors()
+- void reportCollisions()
+- void reportOutOfBounds()
++ void reportFieldOfView()
++ void updateAndDraw(float)
+- void handleKeyPress()
++ void pauseActors()
++ void resumeActors()
++ boolean isInputsEnabled()
++ void setInputsEnabled(boolean)
+}
+class com.georgeneokq.game.widget.ComboDisplayWidget {
+- int combo
+- float maxFontScale
+- float totalAnimationTime
+- float elapsedTime
+- boolean animating
+- boolean peaked
+- float originalFontScaleX
+- float originalFontScaleY
+- float currentFontScaleX
+- float currentFontScaleY
+- Label prefixLabel
+- Label comboLabel
+- Label.LabelStyle style
+- BitmapFont font
+- float fontSize
++ void updateCombo(int)
++ void animate()
++ void animate(float)
++ void stopAnimation()
++ void act(float)
++ void draw(Batch,float)
+- String getString(String)
++ int getCombo()
+}
+class com.georgeneokq.game.event.SelectionResponseEventData {
+- String response
+- Object requestor
++ String getResponse()
++ Object getRequestor()
+}
+class com.georgeneokq.engine.animation.Animations {
+- Map<Actor,AnimationRenderer> runningAnimations
++ void startAnimation(Actor,AnimationRenderer)
++ void render(float)
+}
+class com.georgeneokq.game.actor.npc.PetalburgGymParticlesTrainer {
+- Globals globals
+- EventManager eventManager
+- ScreensManager screensManager
+- Texture battleSprite
+- Question[] questions
+- int currentQuestionIndex
+- String[] subscribedEvents
+- void loadAndShuffleQuestions()
++ void actorEnterView(Actor)
++ void actorInView(Actor)
++ void actorLeaveView(Actor)
++ void interact(Actor)
++ void eventReceived(String,Object)
++ Texture getBattleSprite()
++ String getBattleMusicName()
++ int getMaxHP()
++ Question[] getQuestions()
++ Question getNextQuestion()
++ Dialog getWinDialog()
+}
+class com.georgeneokq.engine.animation.ShakeAnimation {
+- Actor actor
+- float elapsedTime
+- float timeBeforeAnimation
+- float totalAnimationTime
+- float movementInterval
+- float intervalTimer
+- float movePixels
+- float originalX
+- float originalY
+- boolean animating
+- float previousMovement
++ void render(float)
++ void start()
++ void stop()
++ boolean isRunning()
++ float getTimeElapsed()
+}
+class com.georgeneokq.engine.animation.Transitions {
+- TransitionRenderer transitionRenderer
+- Stage stage
++ void startFlashTransition(int,float,float,OnTransitionFinishListener)
++ void startFadeOutTransition(float,float,OnTransitionFinishListener)
++ void startFadeOutTransition(float,float,OnTransitionFinishListener,boolean)
++ void startFadeInTransition(float,float,OnTransitionFinishListener)
++ void render(float)
++ boolean isRunning()
++ void stopAnimation()
++ float getTimeElapsed()
+- void stopCurrentAnimation()
+}
+class com.georgeneokq.engine.actor.CollidableActor {
+# OnCollisionListener onCollisionListener
++ boolean collidesWith(Collidable)
++ void onCollision(Collidable)
++ Rectangle getForecastedBounds()
+}
+interface com.georgeneokq.engine.actor.CollidableActor.OnCollisionListener {
+~ void onCollision(CollidableActor)
+}
+interface com.georgeneokq.engine.save.LoadRequestReceiver {
+~ void onLoadRequestReceived(int)
+}
+class com.georgeneokq.engine.settings.TextSetting {
+- int maxLength
+- String disallowedChars
++ void setValue(Object)
++ String getDisallowedChars()
++ String getSerializableValue()
++ int getMaxLength()
++ void handleExtra(String,Object)
++ boolean isCharDisallowed(char)
+}
+class com.georgeneokq.engine.actor.NonCollidableActorAI {
+- Rectangle worldBounds
+- Random random
+- float timeSinceMovementChanged
+- float minimumMovementTime
+- Runnable currentMovementRunnable
+- Runnable[] movementRunnables
+- int previousMovementRunnableIndex
+- boolean moving
++ void outOfWorldBounds()
++ void act(float)
+- int getRandomMovementIndex()
++ void stopMovement()
+}
+abstract class com.georgeneokq.engine.screen.AbstractScreen {
++ void subscribeToEvents()
++ void unsubscribe()
++ String[] getSubscribedEvents()
+# String getString(String)
+# String getBattleMusicPath()
+# int scaleFontSizeByResolution(int)
++ void eventReceived(String,Object)
++ void onResolutionChanged(int,int)
++ {abstract}AbstractScreen clone()
++ {abstract}void initialize()
++ void show()
++ void render(float)
++ void pause()
++ void resize(int,int)
++ void resume()
++ void hide()
++ void dispose()
+}
+class com.georgeneokq.engine.screen.LeaderboardScreen {
+- Stage stage
+- Globals globals
+- ScreensManager screensManager
+- AssetManager assetManager
+- Skin skin
+- String leaderboardFilePath
+- {static} String LEADERBOARD_FILE_PATH
+- List<LeaderboardItem> leaderboardItems
++ void initialize()
+- List<LeaderboardItem> loadLeaderboard(String)
++ void show()
++ void render(float)
+- void handleInputs()
++ AbstractScreen clone()
+}
+class com.georgeneokq.engine.animation.FadeInTransition {
+- boolean running
+- float timeElapsed
+- float timeBeforeTransition
+- float totalTransitionTime
+- Stage stage
+- Table overlay
+- Drawable background
+- OnTransitionFinishListener onFinishListener
+- float getAlpha()
++ void render(float)
++ void start()
++ void stop()
++ boolean isRunning()
++ float getTimeElapsed()
+}
+class com.georgeneokq.game.widget.MoveSelectBox {
+- float longestLabelWidth
+- int selectorIndex
+- Label[] labels
+- Image[] arrows
+- Table table
+- MoveSelectOptions options
+- Sound selectSound
+- AssetManager assetManager
+~ float originalWidth
+~ float originalHeight
++ void renderOptions()
++ void setLabel(int,String)
++ int getSelection()
++ String getSelectedOption()
++ void moveUp()
++ void moveDown()
++ void moveLeft()
++ void moveRight()
+- void setSelection(int)
++ int getSelectorIndex()
++ void setOptions(MoveSelectOptions)
+}
+class com.georgeneokq.game.question.QuestionFilter {
+- QuestionFilterPredicate predicate
+- int retrieveLimit
++ QuestionFilterPredicate getPredicate()
++ int getRetrieveLimit()
+}
+class com.georgeneokq.engine.font.FontGenerator {
++ {static} String asciiCharacters
+- {static} Set<Character> asciiCharacterSet
+- {static} FontGenerator fontGenerator
+- String generateCharacters
+- Map<String,IFontGenerator> fontGeneratorMapping
++ {static} FontGenerator getInstance()
++ BitmapFont createFont(String)
++ BitmapFont createFont(String,int)
++ {static} String getUniqueCharacters(String)
++ BitmapFont generateCommonFont(FreeTypeFontGenerator,int,String)
+- BitmapFont mgenplus(int,String)
+- BitmapFont notosans(int,String)
++ void addFontGenerator(String,IFontGenerator)
++ String getGenerateCharacters()
++ void setGenerateCharacters(String)
++ void addGenerateCharacters(String)
+}
+class com.georgeneokq.game.tests.save.GameSaverTest {
++ void saveAndLoadGame()
++ void loadAllSaveData()
+}
+class com.georgeneokq.game.question.Choice {
+- String value
++ String getValue()
++ void setValue(String)
+}
+class com.georgeneokq.engine.actor.AnimationSet {
+- Map<Direction,Animation> walking
+- Map<Direction,Animation> running
+- Map<Direction,TextureRegion> standing
+- Map<Direction,Animation> biking
++ void addBiking(Animation,Animation,Animation,Animation)
++ void addRunning(Animation,Animation,Animation,Animation)
++ Animation getBiking(Direction)
++ Animation getRunning(Direction)
++ Animation getWalking(Direction)
++ TextureRegion getStanding(Direction)
+}
+class com.georgeneokq.game.skin.MyFontGenerators {
++ {static} BitmapFont notosansComboFont(int,String)
+}
+enum com.georgeneokq.engine.manager.GameState {
++  PLAYING
++  PAUSED
++  STOPPED
+}
+class com.georgeneokq.game.GdxTestRunner {
+- Map<FrameworkMethod,RunNotifier> invokeInRender
++ void create()
++ void resume()
++ void render()
++ void resize(int,int)
++ void pause()
++ void dispose()
+# void runChild(FrameworkMethod,RunNotifier)
+- void waitUntilInvokedInRenderMethod()
+}
+class com.georgeneokq.engine.actor.CollidableActorAI {
+- Rectangle worldBounds
+- Random random
+- boolean autoWalking
+- float timeSinceMovementStarted
+- float timeSinceMovementStopped
+- float minimumMovementTime
+- float minimumStopTime
+- Runnable currentMovementRunnable
+- Runnable[] movementRunnables
+- int previousMovementRunnableIndex
+- boolean moving
++ void outOfWorldBounds()
++ void act(float)
+- int getRandomMovementIndex()
++ void stopMovement()
++ void startMovement()
++ void onCollision(Collidable)
++ float getMinimumMovementTime()
++ void setMinimumMovementTime(float)
++ float getMinimumStopTime()
++ void setMinimumStopTime(float)
++ boolean isAutoWalking()
++ void setAutoWalking(boolean)
+}
+interface com.georgeneokq.engine.animation.OnAnimationFinishListener {
+~ void onFinish(AnimationRenderer)
+}
+
+
+com.georgeneokq.engine.screen.AbstractScreen <|-- com.georgeneokq.game.screen.BattleScreen
+com.georgeneokq.engine.settings.exceptions.RuntimeException <|-- com.georgeneokq.engine.settings.exceptions.InvalidSubclassException
+com.georgeneokq.engine.actor.Cloneable <|.. com.georgeneokq.engine.actor.Actor
+com.georgeneokq.engine.actor.Actor <|-- com.georgeneokq.engine.actor.Actor
+com.georgeneokq.game.OnLoadListener <|.. com.georgeneokq.game.Main
+com.badlogic.gdx.Game <|-- com.georgeneokq.game.Main
+com.georgeneokq.engine.save.LoadRequestReceiver <|.. com.georgeneokq.game.screen.GameScreen
+com.georgeneokq.engine.screen.AbstractScreen <|-- com.georgeneokq.game.screen.GameScreen
+com.georgeneokq.game.actor.npc.Opponent <|.. com.georgeneokq.game.actor.npc.PetalburgGymVocabGreetingsTrainer
+com.georgeneokq.game.actor.npc.Subscriber <|.. com.georgeneokq.game.actor.npc.PetalburgGymVocabGreetingsTrainer
+com.georgeneokq.game.actor.npc.NPC <|-- com.georgeneokq.game.actor.npc.PetalburgGymVocabGreetingsTrainer
+com.georgeneokq.engine.screen.AbstractScreen <|-- com.georgeneokq.engine.screen.LoadingScreen
+com.georgeneokq.engine.screen.LoadingScreen +.. com.georgeneokq.engine.screen.LoadingScreen.OnLoadListener
+com.georgeneokq.engine.actor.Controls <|-- com.georgeneokq.game.actor.PlayerControls
+com.georgeneokq.game.actor.Subscriber <|.. com.georgeneokq.game.actor.InteractiveEntry
+com.georgeneokq.game.actor.npc.NPC <|-- com.georgeneokq.game.actor.InteractiveEntry
+com.georgeneokq.engine.manager.EventManager +.. com.georgeneokq.engine.manager.EventManager.Subscriber
+com.georgeneokq.engine.settings.Cloneable <|.. com.georgeneokq.engine.settings.Setting
+com.georgeneokq.game.actor.npc.Opponent <|.. com.georgeneokq.game.actor.npc.PetalburgGymHiraganaTrainer
+com.georgeneokq.game.actor.npc.Subscriber <|.. com.georgeneokq.game.actor.npc.PetalburgGymHiraganaTrainer
+com.georgeneokq.game.actor.npc.NPC <|-- com.georgeneokq.game.actor.npc.PetalburgGymHiraganaTrainer
+com.georgeneokq.engine.manager.ScreensManager +.. com.georgeneokq.engine.manager.ScreensManager.ScreenNotCachedException
+com.georgeneokq.engine.manager.RuntimeException <|-- com.georgeneokq.engine.manager.ScreensManager.ScreenNotCachedException
+com.georgeneokq.engine.settings.Setting <|-- com.georgeneokq.engine.settings.HotkeySetting
+com.georgeneokq.game.actor.Subscriber <|.. com.georgeneokq.game.actor.Player
+com.georgeneokq.engine.actor.InteractableActor <|-- com.georgeneokq.game.actor.Player
+com.georgeneokq.engine.screen.AbstractScreen <|-- com.georgeneokq.game.screen.MainMenuScreen
+com.georgeneokq.game.actor.npc.Opponent <|.. com.georgeneokq.game.actor.npc.PetalburgGymVocabActionsTrainer
+com.georgeneokq.game.actor.npc.Subscriber <|.. com.georgeneokq.game.actor.npc.PetalburgGymVocabActionsTrainer
+com.georgeneokq.game.actor.npc.NPC <|-- com.georgeneokq.game.actor.npc.PetalburgGymVocabActionsTrainer
+com.georgeneokq.game.actor.npc.Opponent <|.. com.georgeneokq.game.actor.npc.PetalburgGymSentenceFormingTrainer
+com.georgeneokq.game.actor.npc.Subscriber <|.. com.georgeneokq.game.actor.npc.PetalburgGymSentenceFormingTrainer
+com.georgeneokq.game.actor.npc.NPC <|-- com.georgeneokq.game.actor.npc.PetalburgGymSentenceFormingTrainer
+com.badlogic.gdx.scenes.scene2d.ui.Table <|-- com.georgeneokq.game.widget.HPBar
+com.georgeneokq.engine.settings.Setting <|-- com.georgeneokq.engine.settings.NumberSetting
+com.georgeneokq.game.actor.npc.Opponent <|.. com.georgeneokq.game.actor.npc.PetalburgGymKatakanaTrainer
+com.georgeneokq.game.actor.npc.Subscriber <|.. com.georgeneokq.game.actor.npc.PetalburgGymKatakanaTrainer
+com.georgeneokq.game.actor.npc.NPC <|-- com.georgeneokq.game.actor.npc.PetalburgGymKatakanaTrainer
+com.georgeneokq.engine.settings.Cloneable <|.. com.georgeneokq.engine.settings.SettingsGroup
+com.georgeneokq.engine.settings.SettingsGroup +.. com.georgeneokq.engine.settings.SettingsGroup.StatefulTraverseCallback
+com.georgeneokq.engine.screen.AbstractScreen <|-- com.georgeneokq.engine.screen.InstructionScreen
+com.georgeneokq.game.actor.Subscriber <|.. com.georgeneokq.game.actor.InteractableObject
+com.georgeneokq.engine.actor.InteractableActor <|-- com.georgeneokq.game.actor.InteractableObject
+com.georgeneokq.engine.animation.AnimationRenderer <|.. com.georgeneokq.engine.animation.MoveAnimation
+com.georgeneokq.game.map.MapStateController <|-- com.georgeneokq.game.mapstate.PetalburgRoomController
+com.georgeneokq.game.actor.npc.Subscriber <|.. com.georgeneokq.game.actor.npc.NPC
+com.georgeneokq.engine.actor.InteractableActor <|-- com.georgeneokq.game.actor.npc.NPC
+com.georgeneokq.engine.menu.MenuItem +.. com.georgeneokq.engine.menu.MenuItem.OnSelectListener
+com.georgeneokq.engine.save.RuntimeException <|-- com.georgeneokq.engine.save.LoadingNotSupportedException
+com.georgeneokq.engine.screen.AbstractScreen <|-- com.georgeneokq.engine.screen.SelectSaveScreen
+com.georgeneokq.engine.manager.Subscriber <|.. com.georgeneokq.engine.manager.GameStateManager
+com.georgeneokq.engine.animation.TransitionRenderer <|.. com.georgeneokq.engine.animation.FadeOutTransition
+com.badlogic.gdx.scenes.scene2d.ui.Table <|-- com.georgeneokq.game.widget.SelectionBox
+com.georgeneokq.engine.actor.Interactable <|.. com.georgeneokq.engine.actor.InteractableActor
+com.georgeneokq.engine.actor.CollidableActor <|-- com.georgeneokq.engine.actor.InteractableActor
+com.georgeneokq.engine.actor.CollidableActor <|-- com.georgeneokq.game.actor.Entry
+com.georgeneokq.engine.screen.AbstractScreen <|-- com.georgeneokq.engine.screen.CreditsScreen
+com.georgeneokq.game.actor.npc.Opponent <|.. com.georgeneokq.game.actor.npc.PetalburgGymVocabWeatherTrainer
+com.georgeneokq.game.actor.npc.Subscriber <|.. com.georgeneokq.game.actor.npc.PetalburgGymVocabWeatherTrainer
+com.georgeneokq.game.actor.npc.NPC <|-- com.georgeneokq.game.actor.npc.PetalburgGymVocabWeatherTrainer
+com.badlogic.gdx.scenes.scene2d.ui.Table <|-- com.georgeneokq.game.widget.DialogBox
+com.georgeneokq.engine.actor.Actor <|-- com.georgeneokq.engine.actor.NonCollidableActor
+com.georgeneokq.game.actor.npc.Opponent <|.. com.georgeneokq.game.actor.npc.PetalburgGymLeader
+com.georgeneokq.game.actor.npc.Subscriber <|.. com.georgeneokq.game.actor.npc.PetalburgGymLeader
+com.georgeneokq.game.actor.npc.NPC <|-- com.georgeneokq.game.actor.npc.PetalburgGymLeader
+com.georgeneokq.game.dialog.Dialog +.. com.georgeneokq.game.dialog.Dialog.Line
+com.georgeneokq.engine.settings.Setting <|-- com.georgeneokq.engine.settings.DropdownSelectSetting
+com.georgeneokq.engine.animation.TransitionRenderer <|.. com.georgeneokq.engine.animation.FlashTransition
+com.georgeneokq.engine.screen.AbstractScreen <|-- com.georgeneokq.engine.screen.SettingsScreen
+com.georgeneokq.engine.settings.Setting <|-- com.georgeneokq.engine.settings.BooleanSetting
+com.georgeneokq.engine.settings.exceptions.RuntimeException <|-- com.georgeneokq.engine.settings.exceptions.InvalidFormatException
+com.badlogic.gdx.scenes.scene2d.Stage <|-- com.georgeneokq.engine.stage.ExtendedStage
+com.badlogic.gdx.scenes.scene2d.ui.Table <|-- com.georgeneokq.game.widget.ComboDisplayWidget
+com.georgeneokq.game.actor.npc.Opponent <|.. com.georgeneokq.game.actor.npc.PetalburgGymParticlesTrainer
+com.georgeneokq.game.actor.npc.Subscriber <|.. com.georgeneokq.game.actor.npc.PetalburgGymParticlesTrainer
+com.georgeneokq.game.actor.npc.NPC <|-- com.georgeneokq.game.actor.npc.PetalburgGymParticlesTrainer
+com.georgeneokq.engine.animation.AnimationRenderer <|.. com.georgeneokq.engine.animation.ShakeAnimation
+com.georgeneokq.engine.actor.Collidable <|.. com.georgeneokq.engine.actor.CollidableActor
+com.georgeneokq.engine.actor.Actor <|-- com.georgeneokq.engine.actor.CollidableActor
+com.georgeneokq.engine.actor.CollidableActor +.. com.georgeneokq.engine.actor.CollidableActor.OnCollisionListener
+com.georgeneokq.engine.settings.Setting <|-- com.georgeneokq.engine.settings.TextSetting
+com.georgeneokq.engine.actor.NonCollidableActor <|-- com.georgeneokq.engine.actor.NonCollidableActorAI
+com.badlogic.gdx.Screen <|.. com.georgeneokq.engine.screen.AbstractScreen
+com.georgeneokq.engine.screen.ResizableScreen <|.. com.georgeneokq.engine.screen.AbstractScreen
+com.georgeneokq.engine.screen.Cloneable <|.. com.georgeneokq.engine.screen.AbstractScreen
+com.georgeneokq.engine.screen.Subscriber <|.. com.georgeneokq.engine.screen.AbstractScreen
+com.georgeneokq.engine.screen.AbstractScreen <|-- com.georgeneokq.engine.screen.LeaderboardScreen
+com.georgeneokq.engine.animation.TransitionRenderer <|.. com.georgeneokq.engine.animation.FadeInTransition
+com.badlogic.gdx.scenes.scene2d.ui.Table <|-- com.georgeneokq.game.widget.MoveSelectBox
+com.badlogic.gdx.ApplicationListener <|.. com.georgeneokq.game.GdxTestRunner
+org.junit.runners.BlockJUnit4ClassRunner <|-- com.georgeneokq.game.GdxTestRunner
+com.georgeneokq.engine.actor.CollidableActor <|-- com.georgeneokq.engine.actor.CollidableActorAI
+@enduml
