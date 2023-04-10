@@ -439,14 +439,6 @@
         <choice>You're good!</choice>
         <choice>It's delicious!</choice>
     </question>
-    <question name="vocabulary_greetings_4" voice="test.wav" >
-        <type>listening</type>
-        <question>かのじょ は なんて いいましたか？</question>
-        <choice>Um, big brother...<answer/></choice>
-        <choice>Um, little brother...</choice>
-        <choice>Um, little sister...</choice>
-        <choice>Um, big sister...</choice>
-    </question>
     <question name="vocabulary_actions_1" voice="kotoba_imi.wav" >
         <question>はしる</question>
         <choice>Walk</choice>
@@ -467,7 +459,7 @@
         </choice>
         <choice>Toss</choice>
     </question>
-    <question name="sentence_forming_1" voice="test.wav" >
+    <question name="sentence_forming_1" voice="connect_sentence.wav" >
         <question>___ は ★ ___ ___ 。</question>
         <choice>かれ</choice>
         <choice>食べました</choice>
@@ -477,7 +469,7 @@
         </choice>
         <choice>を</choice>
     </question>
-    <question name="sentence_forming_2" voice="test.wav" >
+    <question name="sentence_forming_2" voice="connect_sentence.wav" >
         <question>___ ___ ご飯 ★ ___ 。</question>
         <choice>かれ</choice>
         <choice>
@@ -489,7 +481,7 @@
         </choice>
         <choice>は</choice>
     </question>
-    <question name="particles_1" voice="test.wav" >
+    <question name="particles_1" voice="particles_1.wav" >
         <question>かれ _　せめないで ください 。</question>
         <choice>で</choice>
         <choice>
@@ -501,7 +493,7 @@
         </choice>
         <choice>は</choice>
     </question>
-    <question name="particles_2" voice="test.wav" >
+    <question name="particles_2" voice="particles_2.wav" >
         <question>あ、それは ぼく _ おにぎりだ。</question>
         <choice>で</choice>
         <choice>
