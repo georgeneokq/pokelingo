@@ -114,6 +114,7 @@ public class FontGenerator {
         }
 
         BitmapFont font = generator.generateFont(parameter);
+        font.setUseIntegerPositions(false);
         generator.dispose();
 
         return font;
