@@ -70,8 +70,8 @@
 
     <dialog name="interactable_birchlabboard">
         <line audio="enter_room.wav">
-            <original>オダマキ はかせ けんきゅうじょ</original>
-            <subtitle>Odamaki hakase kenkyuujo</subtitle>
+            <original>オダマキ はかせ の けんきゅうじょ</original>
+            <subtitle>Odamaki hakase no kenkyuujo</subtitle>
         </line>
     </dialog>
 
