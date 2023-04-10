@@ -27,21 +27,21 @@
     </dialog>
 
     <dialog name="interactable_ashhomeboard">
-        <line audio="test.wav">
+        <line audio="satoshi_house.wav">
             <original>Satoshi no ie</original>
             <subtitle>Satoshi's house</subtitle>
         </line>
     </dialog>
 
     <dialog name="interactable_mayhomeboard">
-        <line audio="test.wav">
+        <line audio="haruka_house.wav">
             <original>Haruka no ie</original>
             <subtitle>Haruka's house</subtitle>
         </line>
     </dialog>
 
     <dialog name="interactable_littleroottownboard">
-        <line audio="test.wav">
+        <line audio="mishiro_town.wav">
             <original>Mishiro taun e youkoso!</original>
             <subtitle>Welcome to Mishiro town!</subtitle>
         </line>
@@ -69,7 +69,7 @@
     </dialog>
 
     <dialog name="interactable_birchlabboard">
-        <line audio="test.wav">
+        <line audio="odamaki_lab.wav">
             <original>Odamaki hakase kenkyuujo</original>
             <subtitle>Professor Odamaki's laboratory</subtitle>
         </line>

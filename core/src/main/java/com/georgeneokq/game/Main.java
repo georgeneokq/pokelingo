@@ -76,18 +76,12 @@ public class Main extends Game implements LoadingScreen.OnLoadListener {
 		SettingsScreen settingsScreen = new SettingsScreen();
 		MainMenuScreen mainMenuScreen = new MainMenuScreen();
 		SelectSaveScreen selectSaveScreen = new SelectSaveScreen(GameScreen.class);
-		LeaderboardScreen leaderboardScreen = new LeaderboardScreen();
-		CreditsScreen creditsScreen = new CreditsScreen();
-		InstructionScreen instructionScreen = new InstructionScreen();
 
 		screensManager.cacheScreens(
 				gameScreen,
 				settingsScreen,
 				mainMenuScreen,
-				selectSaveScreen,
-				leaderboardScreen,
-				creditsScreen,
-				instructionScreen
+				selectSaveScreen
 		);
 
 		// Change to the transition screen
@@ -131,7 +125,6 @@ public class Main extends Game implements LoadingScreen.OnLoadListener {
 
 		assetManager.load("skin/cloud-form-ui.json", Skin.class);
 		assetManager.load("font/small_letters_font.fnt", BitmapFont.class);
-		assetManager.load("CreditsBackground.png", Texture.class);
 		assetManager.load("game/uipack.atlas", TextureAtlas.class);
 	}
 
