@@ -642,6 +642,7 @@ public class GameScreen extends AbstractScreen implements LoadRequestReceiver {
             SelectionRequestEventData requestEventData = (SelectionRequestEventData) data;
             dialog = requestEventData.getDialog();
             selectionRequestor = requestEventData.getRequestor();
+            musicManager.limitVolume(15 / 100f);
             // Animate text
             Dialog.Line line = dialog.getLines()[0];
             dialogRoot.remove();
