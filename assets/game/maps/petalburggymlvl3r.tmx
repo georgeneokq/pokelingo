@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="19" height="17" tilewidth="8" tileheight="8" infinite="0" nextlayerid="6" nextobjectid="12">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="19" height="17" tilewidth="8" tileheight="8" infinite="0" nextlayerid="7" nextobjectid="12">
  <properties>
   <property name="music" value="pokemon_gym.wav"/>
   <property name="name" value="Petalburg Gym 3R"/>
@@ -41,7 +41,7 @@
   <object id="2" x="-0.666667" y="-1" width="16" height="34.6667"/>
   <object id="4" x="32" y="-0.333333" width="120.333" height="33.6667"/>
  </objectgroup>
- <objectgroup id="5" name="entry">
+ <objectgroup id="6" name="interactables">
   <object id="10" name="petalburg_gym_vocabulary_actions_trainer" x="71" y="55.5" width="12" height="12">
    <properties>
     <property name="direction" value="DOWN"/>

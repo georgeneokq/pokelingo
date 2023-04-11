@@ -39,7 +39,7 @@
  </objectgroup>
  <objectgroup id="3" name="collidables">
   <object id="4" x="35" y="-1.66667" width="117" height="33.5758"/>
-  <object id="5" x="-0.333333" y="-0.666667" width="18.6667" height="33.3333"/>
+  <object id="5" x="-0.333333" y="-0.666667" width="18.6667" height="32.8205"/>
  </objectgroup>
  <objectgroup id="4" name="entry"/>
  <objectgroup id="5" name="interactables">
@@ -49,7 +49,7 @@
     <property name="npc_name" value="petalburg_gym_particles_trainer"/>
    </properties>
   </object>
-  <object id="9" name="petalburggymlvl2l" x="17.7266" y="13.0907" width="16.1831" height="19.7694" rotation="359.12">
+  <object id="9" name="petalburggymlvl2l" x="18.4076" y="13.0802" width="15.502" height="19.1067" rotation="359.12">
    <properties>
     <property name="direction" value="UP"/>
     <property name="npc_name" value="petalburg_gym_l4r_entry_1"/>
