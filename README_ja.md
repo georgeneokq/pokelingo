@@ -21,6 +21,10 @@
 - **YAMLパーサー:** SnakeYAML（設定用）
 - **テキスト描画:** LibGDX FreeType（日本語文字の動的フォント生成）
 
+## 音声生成
+
+このゲームの音声・問題読み上げはすべて [VOICEVOX](https://voicevox.hiroshiba.jp/) で生成しています。VOICEVOXは日本のオープンソースTTSエンジンです。
+
 ## 遊び方（Windows）
 
 遊ぶための最も簡単な方法は、事前にパッケージ化されたリリース版をダウンロードすることです。

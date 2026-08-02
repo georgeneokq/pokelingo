@@ -21,6 +21,10 @@ A Japanese language learning game inspired by Pokemon. Explore a gym, challenge 
 - **YAML parsing:** SnakeYAML (settings)
 - **Text rendering:** LibGDX FreeType (dynamic fonts for Japanese characters)
 
+## Voice Generation
+
+All voice lines and question audio in this game are generated using [VOICEVOX](https://voicevox.hiroshiba.jp/), a Japanese open-source text-to-speech engine.
+
 ## How to Run (Windows)
 
 The easiest way to play is through a pre-built release package.
