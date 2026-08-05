@@ -88,11 +88,12 @@ Controls can be changed in the Settings menu.
 
 ## Language Support
 
-The game supports three language modes, selectable in Settings:
+The game supports two language modes, selectable in Settings:
 
-- **English (EN)**: All UI and questions in English
-- **Japanese (JP)**: Questions and UI in Japanese (kanji/kana)
-- **Japanese Kana (JP_KANA)**: Questions and UI in hiragana/katakana only
+- **English (EN)**
+- **Japanese (JP)**: Uses only hiragana and katakana notation
+
+In every language mode, interactive objects and dialogue are shown together with romanization.
 
 ## Project Structure
 

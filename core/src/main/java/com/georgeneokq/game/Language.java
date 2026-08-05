@@ -2,8 +2,7 @@ package com.georgeneokq.game;
 
 public enum Language {
     EN,
-    JP,
-    JP_KANA;
+    JP;
 
     Language() {}
 
@@ -13,8 +12,6 @@ public enum Language {
                 return EN;
             case "jp":
                 return JP;
-            case "jp_kana":
-                return JP_KANA;
             default:
                 return null;
         }
